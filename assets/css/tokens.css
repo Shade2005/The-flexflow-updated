@@ -1,0 +1,268 @@
+/* ---------- fonts ----------
+   Clash Display: Fontshare (Indian Type Foundry), served from cdn.fontshare.com.
+   Manrope: Google Fonts. */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+
+@font-face {
+   font-family: "Clash Display";
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
+   src: url("https://cdn.fontshare.com/wf/2GQIT54GKQY3JRFTSHS4ARTRNRQISSAA/3CIP5EBHRRHE5FVQU3VFROPUERNDSTDF/JTSL5QESUXATU47LCPUNHZQBDDIWDOSW.woff2") format("woff2"), url("https://cdn.fontshare.com/wf/2GQIT54GKQY3JRFTSHS4ARTRNRQISSAA/3CIP5EBHRRHE5FVQU3VFROPUERNDSTDF/JTSL5QESUXATU47LCPUNHZQBDDIWDOSW.woff") format("woff")
+}
+
+@font-face {
+   font-family: "Clash Display";
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
+   src: url("https://cdn.fontshare.com/wf/FPDAZ2S6SW4QMSRIIKNNGTPM6VIXYMKO/5HNPQ453FRLIQWV2FNOBUU3FKTDZQVSG/Z3MGHFHX6DCTLQ55LJYRJ5MDCZPMFZU6.woff2") format("woff2"), url("https://cdn.fontshare.com/wf/FPDAZ2S6SW4QMSRIIKNNGTPM6VIXYMKO/5HNPQ453FRLIQWV2FNOBUU3FKTDZQVSG/Z3MGHFHX6DCTLQ55LJYRJ5MDCZPMFZU6.woff") format("woff")
+}
+
+@font-face {
+   font-family: "Clash Display";
+   font-weight: 700;
+   font-style: normal;
+   font-display: swap;
+   src: url("https://cdn.fontshare.com/wf/BFBSY7LX5W2U2EROCLVVTQP4VS7S4PC3/IIUX4FGTMD2LK2VWD3RVTAS4SSMUN7B5/53RZKGODFYDW3QHTIL7IPOWTBCSUEZK7.woff2") format("woff2"), url("https://cdn.fontshare.com/wf/BFBSY7LX5W2U2EROCLVVTQP4VS7S4PC3/IIUX4FGTMD2LK2VWD3RVTAS4SSMUN7B5/53RZKGODFYDW3QHTIL7IPOWTBCSUEZK7.woff") format("woff")
+}
+
+/* ---------- colour ----------
+   INK — base neutral, hue 275. Two blacks nudged to a visible blue-violet bias, extended to
+   a full scale. SIGNAL — the only accent, carries action, never decoration. */
+:root {
+   color-scheme: dark;
+   background-color: #0C0B12;
+   --ink-950: #14141A;
+   --ink-900: #2B2B33;
+   --ink-800: #2B2A38;
+   --ink-700: #413F55;
+   --ink-500: #6E6A8A;
+   --ink-300: #A9A5BE;
+   --ink-200: #DDDAE6;
+   --ink-100: #F0EEF5;
+   --ink-050: #F7F5F1;
+
+   --signal-600: #C4271D;
+   --signal-500: #E83628;
+   --signal-300: #F2705F;
+   --signal-100: #FBD5CF;
+   --signal-050: #FDEEEB;
+
+   /* SEMANTIC — danger moved off red so an error never reads as a primary action. */
+   --success: #0E8A5F;
+   --warning: #C98A00;
+   --danger: #A81E4B;
+   --info: #3D5CE8;
+
+   /* Surfaces */
+   --surface-ink: var(--ink-950);
+   --surface-ink-raised: var(--ink-900);
+   --surface-ink-sunken: #0F0E18;
+   --surface-page: var(--ink-050);
+   --surface-card: #FFFFFF;
+   --surface-wash: var(--ink-100);
+   --surface-signal: var(--signal-500);
+   --surface-signal-wash: var(--signal-050);
+
+   /* Text */
+   --text-strong: var(--ink-950);
+   --text-body: var(--ink-800);
+   --text-muted: var(--ink-500);
+   --text-on-ink: var(--ink-050);
+   --text-on-ink-muted: var(--ink-300);
+   --text-on-signal: #FFFFFF;
+   --text-accent: var(--signal-600);
+   /* small text on light grounds — 4.01:1 */
+   --text-accent-on-ink: var(--signal-300);
+   /* small text on ink — 6.4:1 */
+
+   /* Lines — the grid stays visible */
+   --rule-on-ink: rgba(255, 255, 255, .08);
+   --rule-on-light: var(--ink-200);
+   --rule-strong: var(--ink-950);
+   --border-field: var(--ink-200);
+   --border-field-ink: rgba(255, 255, 255, .16);
+   --focus-ring: var(--signal-500);
+
+   /* ---------- type scale ---------- */
+   --font-display: "Clash Display", "Clash Display Variable", system-ui, sans-serif;
+   --font-body: "Manrope", system-ui, sans-serif;
+   --font-mono: var(--font-body);
+
+   --weight-display-med: 500;
+   --weight-display-semi: 600;
+   --weight-display-bold: 700;
+   --weight-body: 400;
+   --weight-body-med: 500;
+   --weight-body-semi: 600;
+   --weight-body-bold: 700;
+
+   --track-display: -.03em;
+   /* Clash Display always runs at -3% */
+   --track-mono-eyebrow: .10em;
+   /* uppercase eyebrows run at +10% in Manrope */
+
+   --size-display: clamp(72px, 7vw, 104px);
+   --lh-display: .95;
+   --size-h1: 48px;
+   --lh-h1: 1.0;
+   --size-h2: 32px;
+   --lh-h2: 1.1;
+   --size-h3: 22px;
+   --lh-h3: 1.2;
+   --size-body-lg: 19px;
+   --lh-body-lg: 1.55;
+   --size-body: 17px;
+   --lh-body: 1.55;
+   --size-body-sm: 15px;
+   --lh-body-sm: 1.55;
+   --size-ui: 16px;
+   --lh-ui: 1.2;
+   --size-eyebrow: 12px;
+   --lh-eyebrow: 1.2;
+   --size-caption: 13px;
+   --lh-caption: 1.4;
+
+   /* ---------- spacing ---------- */
+   --space-1: 4px;
+   --space-2: 8px;
+   --space-3: 12px;
+   --space-4: 16px;
+   --space-5: 24px;
+   --space-6: 32px;
+   --space-7: 48px;
+   --space-8: 64px;
+   --space-9: 96px;
+   --space-10: 128px;
+
+   --gutter: 24px;
+   --columns: 12;
+   --container-max: 1280px;
+   --section-y: 96px;
+   --section-y-tight: 64px;
+
+   /* ---------- radius ----------
+     Square by default. Radius appears only on the logo tile and on controls. */
+   --radius-0: 0px;
+   --radius-sm: 2px;
+   --radius-md: 4px;
+   --radius-tile: 22%;
+   /* logo tile: 22% of side */
+   --radius-pill: 999px;
+
+   /* ---------- elevation ----------
+     Structure is drawn with rules, not shadows. Shadow is reserved for lifted surfaces. */
+   --shadow-none: none;
+   --shadow-sm: 0 1px 2px rgba(20, 19, 31, .06);
+   --shadow-md: 0 4px 16px rgba(20, 19, 31, .08);
+   --shadow-lg: 0 16px 48px rgba(20, 19, 31, .14);
+   --shadow-tile: 0 2px 8px rgba(20, 19, 31, .24);
+   --ring-focus: 0 0 0 2px var(--surface-page), 0 0 0 4px var(--signal-500);
+   --ring-focus-ink: 0 0 0 2px var(--ink-950), 0 0 0 4px var(--signal-500);
+
+   /* ---------- motion ---------- */
+   --ease-standard: cubic-bezier(.2, 0, 0, 1);
+   --ease-out: cubic-bezier(.16, 1, .3, 1);
+   --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
+   --ease-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+   --duration-fast: 120ms;
+   --duration-base: 180ms;
+   --duration-slow: 320ms;
+   --duration-transit: 420ms;
+   --glow-transit-beam: 0 0 12px var(--signal-500), 0 0 24px rgba(232, 54, 40, 0.5);
+   --transition-control: background-color var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
+}
+
+/* ---------- base element styles ---------- */
+body {
+   font-family: var(--font-body);
+   font-size: var(--size-body);
+   line-height: var(--lh-body);
+   color: var(--text-body);
+   background: var(--surface-page);
+   -webkit-font-smoothing: antialiased
+}
+
+h1,
+h2,
+h3,
+h4 {
+   font-family: var(--font-display);
+   font-weight: var(--weight-display-bold);
+   letter-spacing: var(--track-display);
+   color: var(--text-strong);
+   margin: 0
+}
+
+h1 {
+   font-size: var(--size-h1);
+   line-height: var(--lh-h1)
+}
+
+h2 {
+   font-size: var(--size-h2);
+   line-height: var(--lh-h2);
+   font-weight: var(--weight-display-semi)
+}
+
+h3 {
+   font-size: var(--size-h3);
+   line-height: var(--lh-h3);
+   font-weight: var(--weight-display-semi)
+}
+
+p {
+   margin: 0 0 var(--space-4);
+   text-wrap: pretty
+}
+
+a {
+   color: var(--text-accent);
+   text-decoration: none;
+   border-bottom: 1px solid var(--signal-100);
+   transition: var(--transition-control)
+}
+
+a:hover {
+   color: var(--signal-500);
+   border-bottom-color: var(--signal-500)
+}
+
+.ff-eyebrow {
+   font-family: var(--font-body);
+   font-size: var(--size-eyebrow);
+   line-height: var(--lh-eyebrow);
+   letter-spacing: var(--track-mono-eyebrow);
+   font-weight: var(--weight-body-bold);
+   text-transform: uppercase;
+   color: var(--text-accent)
+}
+
+.ff-display {
+   font-family: var(--font-display);
+   font-weight: var(--weight-display-bold);
+   letter-spacing: var(--track-display);
+   font-size: var(--size-display);
+   line-height: var(--lh-display)
+}
+
+.ff-mono {
+   font-family: var(--font-body)
+}
+
+.ff-on-ink {
+   background: var(--surface-ink);
+   color: var(--text-on-ink)
+}
+
+.ff-on-ink h1,
+.ff-on-ink h2,
+.ff-on-ink h3 {
+   color: var(--text-on-ink)
+}
+
+.ff-on-ink a {
+   color: var(--text-accent-on-ink);
+   border-bottom-color: rgba(242, 112, 95, .35)
+}

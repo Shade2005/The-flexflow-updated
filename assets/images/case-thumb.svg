@@ -1,0 +1,10 @@
+<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="presentation">
+  <!-- Placeholder thumbnail for a case study awaiting publication. Deliberately not a stock
+       photo (the brand ships none) and deliberately not the site's own grid-line texture
+       either: three of these sitting edge to edge previously read as one continuous strip
+       of hairlines, indistinguishable from the card borders and the page's own background
+       grid. A flat, sunken panel — no lines at all — reads unambiguously as "photography
+       pending" instead. Swap the <img src> on the card for real case photography once each
+       write-up ships. -->
+  <rect width="640" height="400" fill="#0F0E18"/>
+</svg>

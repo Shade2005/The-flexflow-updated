@@ -1,0 +1,8 @@
+:root{
+  /* The system is square by default. Radius appears only on the logo tile and on controls. */
+  --radius-0:0px;
+  --radius-sm:2px;
+  --radius-md:4px;
+  --radius-tile:22%;  /* logo tile: 22% of side */
+  --radius-pill:999px;
+}

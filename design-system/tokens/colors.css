@@ -1,0 +1,53 @@
+/* INK — base neutral, hue 275. Two blacks nudged to a visible blue-violet bias, extended to a full scale. */
+:root{
+  --ink-950:#14141A;
+  --ink-900:#2B2B33;
+  --ink-800:#2B2A38;
+  --ink-700:#413F55;
+  --ink-500:#6E6A8A;
+  --ink-300:#A9A5BE;
+  --ink-200:#DDDAE6;
+  --ink-100:#F0EEF5;
+  --ink-050:#F7F5F1;
+
+  /* SIGNAL — the only accent. Carries action, never decoration. */
+  --signal-600:#C4271D;
+  --signal-500:#E83628;
+  --signal-300:#F2705F;
+  --signal-100:#FBD5CF;
+  --signal-050:#FDEEEB;
+
+  /* SEMANTIC — danger moved off red so an error never reads as a primary action. */
+  --success:#0E8A5F;
+  --warning:#C98A00;
+  --danger:#A81E4B;
+  --info:#3D5CE8;
+
+  /* Surfaces */
+  --surface-ink:var(--ink-950);
+  --surface-ink-raised:var(--ink-900);
+  --surface-ink-sunken:#0F0E18;
+  --surface-page:var(--ink-050);
+  --surface-card:#FFFFFF;
+  --surface-wash:var(--ink-100);
+  --surface-signal:var(--signal-500);
+  --surface-signal-wash:var(--signal-050);
+
+  /* Text */
+  --text-strong:var(--ink-950);
+  --text-body:var(--ink-800);
+  --text-muted:var(--ink-500);
+  --text-on-ink:var(--ink-050);
+  --text-on-ink-muted:var(--ink-300);
+  --text-on-signal:#FFFFFF;
+  --text-accent:var(--signal-600);      /* small text on light grounds — 4.01:1 */
+  --text-accent-on-ink:var(--signal-300); /* small text on ink — 6.4:1 */
+
+  /* Lines — the grid stays visible */
+  --rule-on-ink:rgba(255,255,255,.08);
+  --rule-on-light:var(--ink-200);
+  --rule-strong:var(--ink-950);
+  --border-field:var(--ink-200);
+  --border-field-ink:rgba(255,255,255,.16);
+  --focus-ring:var(--signal-500);
+}

@@ -1,0 +1,13 @@
+{
+  "name": "the-flexflow-portfolio",
+  "version": "1.0.0",
+  "description": "The FlexFlow Agency Portfolio",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

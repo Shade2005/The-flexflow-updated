@@ -1,0 +1,29 @@
+:root{
+  --font-display:"Clash Display","Clash Display Variable",system-ui,sans-serif;
+  --font-body:"Manrope",system-ui,sans-serif;
+  --font-mono:var(--font-body);
+
+  --weight-display-med:500;
+  --weight-display-semi:600;
+  --weight-display-bold:700;
+  --weight-body:400;
+  --weight-body-med:500;
+  --weight-body-semi:600;
+  --weight-body-bold:700;
+
+  --track-display:-.03em;        /* Clash Display always runs at -3% */
+  --track-mono-eyebrow:.10em;    /* uppercase eyebrows run at +10% in Manrope */
+
+  /* Role scale — display never below 20px */
+  --size-display:clamp(72px,7vw,104px);
+  --lh-display:.95;
+  --size-h1:48px; --lh-h1:1.0;
+  --size-h2:32px; --lh-h2:1.1;
+  --size-h3:22px; --lh-h3:1.2;
+  --size-body-lg:19px; --lh-body-lg:1.55;
+  --size-body:17px; --lh-body:1.55;
+  --size-body-sm:15px; --lh-body-sm:1.55;
+  --size-ui:16px; --lh-ui:1.2;
+  --size-eyebrow:12px; --lh-eyebrow:1.2;
+  --size-caption:13px; --lh-caption:1.4;
+}

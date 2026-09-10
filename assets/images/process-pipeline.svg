@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 240" fill="none" class="process-pipeline-svg">
+  <defs>
+    <linearGradient id="pipeBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1E28"/>
+      <stop offset="100%" stop-color="#14141A"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Flow Line Connecting Steps -->
+  <line x1="120" y1="110" x2="880" y2="110" stroke="#E83628" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
+
+  <!-- Step 01: Audit -->
+  <g transform="translate(120, 110)">
+    <circle r="44" fill="url(#pipeBg)" stroke="#E83628" stroke-width="2"/>
+    <text text-anchor="middle" y="-6" fill="#E83628" font-family="'Manrope', sans-serif" font-weight="700" font-size="12">PHASE</text>
+    <text text-anchor="middle" y="14" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="700" font-size="18">01</text>
+    <text text-anchor="middle" y="64" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="600" font-size="14">Audit</text>
+    <text text-anchor="middle" y="80" fill="#A9A5BE" font-family="'Manrope', sans-serif" font-size="10">Week 1 · 20 Prompts</text>
+  </g>
+
+  <!-- Step 02: Plan -->
+  <g transform="translate(370, 110)">
+    <circle r="44" fill="url(#pipeBg)" stroke="#3D5CE8" stroke-width="2"/>
+    <text text-anchor="middle" y="-6" fill="#3D5CE8" font-family="'Manrope', sans-serif" font-weight="700" font-size="12">PHASE</text>
+    <text text-anchor="middle" y="14" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="700" font-size="18">02</text>
+    <text text-anchor="middle" y="64" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="600" font-size="14">Plan</text>
+    <text text-anchor="middle" y="80" fill="#A9A5BE" font-family="'Manrope', sans-serif" font-size="10">Week 1–2 · Sequence</text>
+  </g>
+
+  <!-- Step 03: Execute -->
+  <g transform="translate(630, 110)">
+    <circle r="44" fill="url(#pipeBg)" stroke="#0E8A5F" stroke-width="2"/>
+    <text text-anchor="middle" y="-6" fill="#0E8A5F" font-family="'Manrope', sans-serif" font-weight="700" font-size="12">PHASE</text>
+    <text text-anchor="middle" y="14" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="700" font-size="18">03</text>
+    <text text-anchor="middle" y="64" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="600" font-size="14">Execute</text>
+    <text text-anchor="middle" y="80" fill="#A9A5BE" font-family="'Manrope', sans-serif" font-size="10">Week 2–6 · Shipped</text>
+  </g>
+
+  <!-- Step 04: Results -->
+  <g transform="translate(880, 110)">
+    <circle r="44" fill="url(#pipeBg)" stroke="#E83628" stroke-width="2.5"/>
+    <text text-anchor="middle" y="-6" fill="#E83628" font-family="'Manrope', sans-serif" font-weight="700" font-size="12">PHASE</text>
+    <text text-anchor="middle" y="14" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="700" font-size="18">04</text>
+    <text text-anchor="middle" y="64" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="600" font-size="14">Results</text>
+    <text text-anchor="middle" y="80" fill="#0E8A5F" font-family="'Manrope', sans-serif" font-size="10">Monthly · 4 Metrics</text>
+  </g>
+</svg>

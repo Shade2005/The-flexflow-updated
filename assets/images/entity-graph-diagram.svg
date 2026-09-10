@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none" class="entity-graph-svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14141A"/>
+      <stop offset="100%" stop-color="#1A1924"/>
+    </linearGradient>
+    <linearGradient id="signalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E83628"/>
+      <stop offset="100%" stop-color="#C4271D"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E8A5F"/>
+      <stop offset="100%" stop-color="#056140"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3D5CE8"/>
+      <stop offset="100%" stop-color="#243DB5"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad)" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
+  <g stroke="rgba(255,255,255,0.04)" stroke-dasharray="4 4">
+    <line x1="100" y1="0" x2="100" y2="450"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="300" y1="0" x2="300" y2="450"/>
+    <line x1="400" y1="0" x2="400" y2="450"/>
+    <line x1="500" y1="0" x2="500" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+    <line x1="700" y1="0" x2="700" y2="450"/>
+    <line x1="0" y1="90" x2="800" y2="90"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="270" x2="800" y2="270"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+  </g>
+
+  <!-- Relationship Paths -->
+  <g stroke-width="1.5" stroke-dasharray="5 3">
+    <path d="M 400 225 L 200 130" stroke="#3D5CE8" stroke-width="2"/>
+    <path d="M 400 225 L 200 320" stroke="#0E8A5F" stroke-width="2"/>
+    <path d="M 400 225 L 600 130" stroke="#E83628" stroke-width="2"/>
+    <path d="M 400 225 L 600 320" stroke="#E83628" stroke-width="2.5"/>
+  </g>
+
+  <!-- Central Entity Node (The FlexFlow Organization) -->
+  <g transform="translate(400, 225)">
+    <circle r="58" fill="#1E1E28" stroke="#E83628" stroke-width="2.5"/>
+    <circle r="46" fill="#14141A" stroke="rgba(255,255,255,0.15)"/>
+    <text text-anchor="middle" y="-6" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="700" font-size="13">THE FLEXFLOW</text>
+    <text text-anchor="middle" y="14" fill="#A9A5BE" font-family="'Manrope', sans-serif" font-size="9">@type: Organization</text>
+    <circle cx="0" cy="28" r="3.5" fill="#0E8A5F"/>
+  </g>
+
+  <!-- Node 1: Founder (Person) -->
+  <g transform="translate(200, 130)">
+    <rect x="-85" y="-32" width="170" height="64" rx="8" fill="#1E1E28" stroke="#3D5CE8" stroke-width="1.5"/>
+    <text text-anchor="middle" y="-8" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="600" font-size="12">Hamza (Founder)</text>
+    <text text-anchor="middle" y="10" fill="#A9A5BE" font-family="'Manrope', sans-serif" font-size="9">@type: Person</text>
+    <text text-anchor="middle" y="23" fill="#3D5CE8" font-family="'Manrope', sans-serif" font-size="8.5">knowsAbout: Full-Stack</text>
+  </g>
+
+  <!-- Node 2: Core Services (Service Entities) -->
+  <g transform="translate(200, 320)">
+    <rect x="-85" y="-32" width="170" height="64" rx="8" fill="#1E1E28" stroke="#0E8A5F" stroke-width="1.5"/>
+    <text text-anchor="middle" y="-8" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="600" font-size="12">6 Disciplines</text>
+    <text text-anchor="middle" y="10" fill="#A9A5BE" font-family="'Manrope', sans-serif" font-size="9">@type: Service</text>
+    <text text-anchor="middle" y="23" fill="#0E8A5F" font-family="'Manrope', sans-serif" font-size="8.5">Web, AI, SEO, Ads</text>
+  </g>
+
+  <!-- Node 3: Wikidata & SameAs Knowledge Links -->
+  <g transform="translate(600, 130)">
+    <rect x="-85" y="-32" width="170" height="64" rx="8" fill="#1E1E28" stroke="#E83628" stroke-width="1.5"/>
+    <text text-anchor="middle" y="-8" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="600" font-size="12">Knowledge Graph</text>
+    <text text-anchor="middle" y="10" fill="#A9A5BE" font-family="'Manrope', sans-serif" font-size="9">sameAs: Wikidata/Map</text>
+    <text text-anchor="middle" y="23" fill="#E83628" font-family="'Manrope', sans-serif" font-size="8.5">Verified Entity Node</text>
+  </g>
+
+  <!-- Node 4: AI Engines (Generative Quotations) -->
+  <g transform="translate(600, 320)">
+    <rect x="-90" y="-36" width="180" height="72" rx="8" fill="#241B26" stroke="#E83628" stroke-width="2"/>
+    <text text-anchor="middle" y="-12" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="700" font-size="12">ChatGPT · Gemini · Perplexity</text>
+    <text text-anchor="middle" y="8" fill="#F2705F" font-family="'Manrope', sans-serif" font-weight="600" font-size="9.5">SOURCE [1] CITED</text>
+    <text text-anchor="middle" y="24" fill="#0E8A5F" font-family="'Manrope', sans-serif" font-size="9">● Verified Recommendation</text>
+  </g>
+
+  <!-- Header -->
+  <text x="30" y="42" fill="#F7F5F1" font-family="'Clash Display', sans-serif" font-weight="700" font-size="15">AI VISIBILITY &amp; ENTITY KNOWLEDGE GRAPH</text>
+  <text x="30" y="60" fill="#A9A5BE" font-family="'Manrope', sans-serif" font-size="10">Schema.org JSON-LD Linked Entity Mapping for Generative Quotation</text>
+</svg>
