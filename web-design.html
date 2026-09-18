@@ -13,7 +13,8 @@
   <meta property="og:title" content="Web Design & Custom Architecture — The FlexFlow">
   <meta property="og:description" content="Bespoke high-performance web design and static DOM architecture. Sub-0.4s load times, 99+ Lighthouse speed, and semantic markup LLMs can parse instantly.">
   <meta property="og:url" content="https://theflexflow.in/web-design">
-  <link rel="canonical" href="https://theflexflow.in/web-design">
+  <meta property="og:site_name" content="The FlexFlow">
+  <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://theflexflow.in/assets/images/figma-design-board.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -33,15 +34,42 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Web Design and Custom Architecture",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "The FlexFlow",
-      "url": "https://theflexflow.in"
-    },
-    "description": "Bespoke high-performance web design and static DOM architecture. Sub-0.4s load times, 99+ Lighthouse speed, and semantic markup LLMs can parse instantly.",
-    "url": "https://theflexflow.in/web-design"
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "Web Design and Custom Architecture",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "The FlexFlow",
+          "url": "https://theflexflow.in"
+        },
+        "description": "Bespoke high-performance web design and static DOM architecture. Sub-0.4s load times, 99+ Lighthouse speed, and semantic markup LLMs can parse instantly.",
+        "url": "https://theflexflow.in/web-design"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://theflexflow.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://theflexflow.in/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Web Design",
+            "item": "https://theflexflow.in/web-design"
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
@@ -383,7 +411,7 @@
             </a>
             <p class="footer-blurb">Founder-led marketing for businesses that would rather talk to the person doing the work.</p>
             <div class="footer-social">
-              <a href="https://www.instagram.com/_theflexflow/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/__khanfident/" target="_blank" rel="noopener noreferrer"
                 aria-label="Instagram" data-spell="magnetic">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i>
               </a>

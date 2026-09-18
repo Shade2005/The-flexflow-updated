@@ -23,4 +23,19 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: Bytespider
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Cohere-ai
+Allow: /
+
 Sitemap: https://theflexflow.in/sitemap.xml
