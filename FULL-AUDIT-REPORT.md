@@ -1,8 +1,8 @@
 # Full Audit Report
 
-- URL: `https://theflexflow.in/`
-- Generated: `2026-09-18T21:42:25.451349`
-- Overall score: `63/100`
+- URL: `https://theflexflow.in`
+- Generated: `2026-09-18T22:10:02.684992`
+- Overall score: `89/100`
 - Score confidence: `Medium`
 - Scoring version: `1`
 
@@ -10,15 +10,15 @@
 
 | Category | Weight | Score |
 | --- | ---: | ---: |
-| Security Headers | 8 | 45 |
+| Security Headers | 8 | 85 |
 | Social Meta | 5 | 69 |
-| Robots and Crawlers | 8 | 20 |
-| Broken Links | 10 | 38 |
+| Robots and Crawlers | 8 | 94 |
+| Broken Links | 10 | 100 |
 | Internal Links | 8 | 100 |
 | Redirects | 3 | 100 |
-| AI Search | 5 | 0 |
+| AI Search | 5 | 100 |
 | Performance and Core Web Vitals | 13 | 0 |
-| On-Page SEO | 10 | 90 |
+| On-Page SEO | 10 | 100 |
 | Readability | 8 | 100 |
 | Entity SEO | 5 | 0 |
 | Link Profile | 7 | 85 |
@@ -30,15 +30,9 @@
 | Severity | Area | Finding | Evidence | Fix |
 | --- | --- | --- | --- | --- |
 | Critical | Schema | No Organization/Person entity found in JSON-LD. |  | Add Organization or Person schema with name, url, logo, and sameAs properties. |
-| Critical | broken_links | 🔴 5 broken link(s) found |  |  |
-| Critical | environment | 5 security headers missing | Missing headers reduce trust and can expose the site to browser/security risks. | Set missing security headers at web server or CDN layer. |
-| Critical | environment | 5 broken links detected | Broken internal links hurt crawl flow and user trust. | Repair or remove broken internal links and refresh outdated navigation targets. |
-| Critical | robots | 🔴 No robots.txt found — all crawlers allowed by default |  |  |
-| Critical | security | 🔴 5 security headers missing — poor security posture |  |  |
-| Warning | environment | Meta description is missing or out of range | This can reduce SERP CTR and snippet quality. | Update page templates to set complete title/meta/OG/Twitter tags. |
-| Warning | environment | No llms.txt found | AI crawlers and assistants have no curated machine-readable guidance for key pages. | Add `/llms.txt` at site root with concise site description and key URLs. |
-| Warning | security | ⚠️ HSTS missing includeSubDomains directive |  |  |
-| Warning | social | ⚠️ og:title is too long (63 chars, max 60) |  |  |
+| Warning | environment | 1 security headers missing | Missing headers reduce trust and can expose the site to browser/security risks. | Set missing security headers at web server or CDN layer. |
+| Warning | robots | ⚠️ 4 AI crawlers not explicitly managed: Bytespider, anthropic-ai, FacebookBot, Amazonbot |  |  |
+| Warning | security | ⚠️ 1 security header(s) missing |  |  |
 | Info | Google Knowledge Graph | No Google Knowledge Graph Search API match found for 'The FlexFlow — Found, ranked and quoted. Founder'. |  | Improve entity consistency across official site schema, sameAs profiles, authoritative mentions, and organization/person pages. |
 | Info | Wikidata | No Wikidata entry found for 'The FlexFlow — Found, ranked and quoted. Founder'. |  | If the entity meets Wikidata notability guidelines, create or improve an item with accurate third-party references. Do not create one solely for SEO. |
 | Info | Wikipedia | No Wikipedia article found for 'The FlexFlow — Found, ranked and quoted. Founder'. |  | Only pursue Wikipedia if the entity meets independent notability standards. Otherwise, strengthen official schema, sameAs profiles, citations, and About/Contact signals. |

@@ -1134,7 +1134,7 @@
               },
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "E-82/b, Abul Fazal Enclave, Okhla",
+                "streetAddress": "E-82/b, A.F.E, Okhla",
                 "addressLocality": "New Delhi",
                 "postalCode": "110025",
                 "addressCountry": "IN"
@@ -1222,7 +1222,7 @@
               },
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "E-82/b, Abul Fazal Enclave, Okhla",
+                "streetAddress": "E-82/b, A.F.E, Okhla",
                 "addressLocality": "New Delhi",
                 "postalCode": "110025",
                 "addressCountry": "IN"
