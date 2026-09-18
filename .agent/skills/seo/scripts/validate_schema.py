@@ -36,7 +36,15 @@ def validate_jsonld(content: str) -> List[str]:
             for item in data:
                 errors.extend(_validate_schema_object(item, i))
         elif isinstance(data, dict):
-            errors.extend(_validate_schema_object(data, i))
+            if "@graph" in data and isinstance(data["@graph"], list):
+                for item in data["@graph"]:
+                    if isinstance(item, dict):
+                        enriched = dict(item)
+                        if "@context" not in enriched:
+                            enriched["@context"] = data.get("@context", "https://schema.org")
+                        errors.extend(_validate_schema_object(enriched, i))
+            else:
+                errors.extend(_validate_schema_object(data, i))
 
     return errors
 
@@ -76,6 +84,7 @@ def _validate_schema_object(obj: dict, block_num: int) -> List[str]:
 
     # Check for deprecated types
     schema_type = obj.get("@type", "")
+    types = schema_type if isinstance(schema_type, list) else [schema_type]
     deprecated = {
         "HowTo": "deprecated September 2023",
         "SpecialAnnouncement": "deprecated July 31, 2025",
@@ -87,13 +96,12 @@ def _validate_schema_object(obj: dict, block_num: int) -> List[str]:
         "PracticeProblem": "retired late 2025 — rich results discontinued",
         "Dataset": "retired late 2025 — rich results discontinued",
     }
-    if schema_type in deprecated:
-        errors.append(f"{prefix}: @type '{schema_type}' is {deprecated[schema_type]}")
-
-    # Check for restricted types used incorrectly
     restricted = {"FAQPage": "restricted to government and healthcare sites only (Aug 2023)"}
-    if schema_type in restricted:
-        errors.append(f"{prefix}: @type '{schema_type}' is {restricted[schema_type]} — verify site qualifies")
+    for st in types:
+        if st in deprecated:
+            errors.append(f"{prefix}: @type '{st}' is {deprecated[st]}")
+        if st in restricted:
+            errors.append(f"{prefix}: @type '{st}' is {restricted[st]} — verify site qualifies")
 
     return errors
 
