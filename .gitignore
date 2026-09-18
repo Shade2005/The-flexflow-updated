@@ -30,3 +30,9 @@ Desktop.ini
 
 # Temporary media recordings
 assets/video/Bug.mp4
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+

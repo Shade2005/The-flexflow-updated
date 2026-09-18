@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The FlexFlow — Found, ranked and quoted. Founder-led marketing.</title>
   <meta name="description"
-    content="Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility (GEO/AEO), SEO, performance marketing, brand identity and social — one point of contact.">
+    content="Founder-led marketing engineering. Web design, AI visibility (GEO/AEO), SEO, and performance ads with one direct point of contact. Book a 30-min call.">
   <link rel="icon" href="/assets/images/logo-mark-signal.png">
+  <link rel="canonical" href="https://theflexflow.in/">
   <meta name="theme-color" content="#14141A">
   <style>html,body{background-color:#0C0B12!important;color-scheme:dark;}</style>
   <meta property="og:type" content="website">
-  <meta property="og:title" content="The FlexFlow — Found, ranked and quoted. Founder-led marketing.">
-  <meta property="og:description" content="Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility (GEO/AEO), SEO, performance marketing, brand identity and social.">
+  <meta property="og:title" content="The FlexFlow — Found, Ranked and Quoted. Marketing.">
+  <meta property="og:description" content="Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility, SEO, performance marketing, brand identity and social.">
   <meta property="og:url" content="https://theflexflow.in/">
   <meta property="og:image" content="https://theflexflow.in/assets/images/logo-mark-signal.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The FlexFlow — Founder-led marketing engineering.">
   <meta name="twitter:description" content="Web design, AI visibility, SEO, performance marketing, brand systems, and social media. One point of contact.">
@@ -31,26 +34,62 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "The FlexFlow",
-    "url": "https://theflexflow.in",
-    "logo": "https://theflexflow.in/assets/images/logo-mark-signal.png",
-    "description": "Founder-led marketing engineering across Web Design, AI Visibility (GEO/AEO), SEO, Performance Marketing, Brand Identity, and Social Media.",
-    "founder": {
-      "@type": "Person",
-      "name": "Hamza"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "E-82/b, Abul Fazal Enclave, Okhla",
-      "addressLocality": "New Delhi",
-      "postalCode": "110025",
-      "addressCountry": "IN"
-    },
-    "telephone": "+918929243913",
-    "email": "hamza@theflexflow.in",
-    "sameAs": [
-      "https://www.instagram.com/_theflexflow/"
+    "@graph": [
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "https://theflexflow.in/#organization",
+        "name": "The FlexFlow",
+        "url": "https://theflexflow.in",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://theflexflow.in/#logo",
+          "url": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+          "caption": "The FlexFlow Logo"
+        },
+        "image": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+        "description": "Founder-led marketing engineering across Web Design, AI Visibility (GEO/AEO), SEO, Performance Marketing, Brand Identity, and Social Media.",
+        "founder": {
+          "@type": "Person",
+          "@id": "https://theflexflow.in/#founder",
+          "name": "Hamza",
+          "jobTitle": "Founder & Marketing Engineer"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "E-82/b, Abul Fazal Enclave, Okhla",
+          "addressLocality": "New Delhi",
+          "postalCode": "110025",
+          "addressCountry": "IN"
+        },
+        "telephone": "+918929243913",
+        "email": "hamza@theflexflow.in",
+        "sameAs": [
+          "https://www.instagram.com/_theflexflow/"
+        ],
+        "priceRange": "$$"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://theflexflow.in/#website",
+        "url": "https://theflexflow.in",
+        "name": "The FlexFlow",
+        "publisher": {
+          "@id": "https://theflexflow.in/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://theflexflow.in/#webpage",
+        "url": "https://theflexflow.in/",
+        "name": "The FlexFlow — Found, Ranked and Quoted. Marketing.",
+        "isPartOf": {
+          "@id": "https://theflexflow.in/#website"
+        },
+        "about": {
+          "@id": "https://theflexflow.in/#organization"
+        },
+        "description": "Founder-led marketing engineering. Web design, AI visibility (GEO/AEO), SEO, and performance ads with one direct point of contact."
+      }
     ]
   }
   </script>
@@ -63,12 +102,12 @@
   <header class="navigation" id="siteNav">
     <div class="navigation-inner">
       <a class="lockup" href="/" aria-label="The FlexFlow — home">
-        <img class="on-ink" src="/assets/images/logo-mark-signal.png" alt="">
+        <img class="on-ink" src="/assets/images/logo-mark-signal.png" alt="The FlexFlow logo">
         <span>The FlexFlow</span>
       </a>
       <nav class="navigation-links" aria-label="Primary">
         <a href="/" aria-current="page">Home</a>
-        <a href="/about">About</a>
+        <a href="/#about">About</a>
         <a href="/services">Services</a>
         <a href="/work">Case Studies</a>
         <a href="/contact">Contact</a>
@@ -85,7 +124,7 @@
     <div class="navigation-menu" id="navMenu" aria-hidden="true">
       <nav class="navigation-menu-links" aria-label="Primary, mobile">
         <a href="/" aria-current="page"><span class="navigation-menu-number">01</span><span class="navigation-menu-label">Home</span></a>
-        <a href="/about"><span class="navigation-menu-number">02</span><span class="navigation-menu-label">About</span></a>
+        <a href="/#about"><span class="navigation-menu-number">02</span><span class="navigation-menu-label">About</span></a>
         <a href="/services"><span class="navigation-menu-number">03</span><span class="navigation-menu-label">Services</span></a>
         <a href="/work"><span class="navigation-menu-number">04</span><span class="navigation-menu-label">Case Studies</span></a>
         <a href="/contact"><span class="navigation-menu-number">05</span><span class="navigation-menu-label">Contact</span></a>
@@ -978,7 +1017,7 @@
               <h3 class="showcase-step-heading">Showroom leads at &#8377;55.59</h3>
               <p class="case-line">ABC Group of India sold through showrooms and had no way to fill the calendar between walk-ins. 268 dealer and buyer leads at ₹55.59 each, from 12M+ reach and 52M+ impressions.</p>
               <div class="case-cta">
-                <a class="button button-tertiary-ink button-small" href="/work/abc-tile-ads" data-spell="magnetic">Read the case study</a>
+                <a class="button button-tertiary-ink button-small" href="/work#abc-tile-ads" data-spell="magnetic">Read the case study</a>
               </div>
             </article>
 
@@ -991,7 +1030,7 @@
               <h3 class="showcase-step-heading">160+ booking enquiries on a budget smaller than rent</h3>
               <p class="case-line">Voyage India Travel was competing with national booking sites on a budget smaller than their monthly office rent. &#8377;2,542.35 spent, 160+ package enquiries across Hyderabad, Delhi&ndash;Agra and Kashmir &mdash; &#8377;14.54 a lead.</p>
               <div class="case-cta">
-                <a class="button button-tertiary-ink button-small" href="/work/travel-agency-ads" data-spell="magnetic">Read the case study</a>
+                <a class="button button-tertiary-ink button-small" href="/work#travel-agency-ads" data-spell="magnetic">Read the case study</a>
               </div>
             </article>
 
@@ -1004,7 +1043,7 @@
               <h3 class="showcase-step-heading">1.08M city impressions at &#8377;2.35 CPM</h3>
               <p class="case-line">Zara Salon &amp; Spa was invisible to everyone who didn't already walk past it. 1.08M+ impressions across their own city at &#8377;2.35 CPM, and 28+ booking enquiries at &#8377;45.00 each.</p>
               <div class="case-cta">
-                <a class="button button-tertiary-ink button-small" href="/work/salon-ads" data-spell="magnetic">Read the case study</a>
+                <a class="button button-tertiary-ink button-small" href="/work#salon-ads" data-spell="magnetic">Read the case study</a>
               </div>
             </article>
 
@@ -1206,7 +1245,7 @@
         <div class="footer-top">
           <div class="footer-company">
             <a class="lockup" href="/">
-              <img class="on-ink" src="/assets/images/logo-mark-signal.png" alt="">
+              <img class="on-ink" src="/assets/images/logo-mark-signal.png" alt="The FlexFlow logo">
               <span>The FlexFlow</span>
             </a>
             <p class="footer-blurb">Founder-led marketing for businesses that would rather talk to the person doing the work.</p>
@@ -1224,7 +1263,7 @@
           <div class="footer-column">
             <span>Navigation</span>
             <a href="/">Home</a>
-            <a href="/about">About</a>
+            <a href="/#about">About</a>
             <a href="/services">Services</a>
             <a href="/work">Case Studies</a>
             <a href="/contact">Contact</a>

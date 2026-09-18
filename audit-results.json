@@ -1,0 +1,1326 @@
+{
+  "url": "https://theflexflow.in/",
+  "scores": {
+    "overall": 63,
+    "categories": {
+      "security": 45,
+      "social": 69,
+      "robots": 20,
+      "article": 50,
+      "broken_links": 38,
+      "internal_links": 100,
+      "redirects": 100,
+      "llms_txt": 0,
+      "pagespeed": 0,
+      "onpage": 90,
+      "readability": 100,
+      "entity": 0,
+      "link_profile": 85,
+      "hreflang": 0,
+      "duplicate_content": 100
+    },
+    "weights": {
+      "security": 8,
+      "social": 5,
+      "robots": 8,
+      "broken_links": 10,
+      "internal_links": 8,
+      "redirects": 3,
+      "llms_txt": 5,
+      "pagespeed": 13,
+      "onpage": 10,
+      "readability": 8,
+      "entity": 5,
+      "link_profile": 7,
+      "hreflang": 5,
+      "duplicate_content": 5
+    },
+    "scoring_version": 1
+  },
+  "data": {
+    "url": "https://theflexflow.in/",
+    "domain": "theflexflow.in",
+    "timestamp": "2026-09-18T21:42:25.451349",
+    "sections": {
+      "robots": {
+        "url": "https://theflexflow.in/robots.txt",
+        "status": 404,
+        "user_agents": {},
+        "sitemaps": [],
+        "crawl_delays": {},
+        "ai_crawler_status": {
+          "GPTBot": "allowed (no robots.txt)",
+          "ChatGPT-User": "allowed (no robots.txt)",
+          "ClaudeBot": "allowed (no robots.txt)",
+          "PerplexityBot": "allowed (no robots.txt)",
+          "Google-Extended": "allowed (no robots.txt)",
+          "Applebot-Extended": "allowed (no robots.txt)",
+          "Bytespider": "allowed (no robots.txt)",
+          "CCBot": "allowed (no robots.txt)",
+          "anthropic-ai": "allowed (no robots.txt)",
+          "FacebookBot": "allowed (no robots.txt)",
+          "Amazonbot": "allowed (no robots.txt)"
+        },
+        "issues": [
+          "\ud83d\udd34 No robots.txt found \u2014 all crawlers allowed by default"
+        ],
+        "error": null
+      },
+      "security": {
+        "url": "https://theflexflow.in/",
+        "score": 45,
+        "https": true,
+        "headers_present": {
+          "HSTS (Strict-Transport-Security)": "max-age=63072000"
+        },
+        "headers_missing": {
+          "Content-Security-Policy (CSP)": "Prevents XSS, clickjacking, and code injection.",
+          "X-Frame-Options": "Prevents clickjacking by controlling iframe embedding.",
+          "X-Content-Type-Options": "Prevents MIME-type sniffing.",
+          "Referrer-Policy": "Controls how much referrer info is shared.",
+          "Permissions-Policy": "Controls browser feature access (camera, microphone, geolocation)."
+        },
+        "header_values": {
+          "strict-transport-security": "max-age=63072000"
+        },
+        "issues": [
+          "\u26a0\ufe0f HSTS missing includeSubDomains directive",
+          "\ud83d\udd34 5 security headers missing \u2014 poor security posture"
+        ],
+        "recommendations": [
+          "Content-Security-Policy (CSP): Add a Content-Security-Policy header restricting script/style sources.",
+          "X-Frame-Options: Add header: X-Frame-Options: SAMEORIGIN",
+          "X-Content-Type-Options: Add header: X-Content-Type-Options: nosniff",
+          "Referrer-Policy: Add header: Referrer-Policy: strict-origin-when-cross-origin",
+          "Permissions-Policy: Add header: Permissions-Policy: camera=(), microphone=(), geolocation=()"
+        ],
+        "error": null
+      },
+      "social": {
+        "url": "https://theflexflow.in/",
+        "score": 69,
+        "og_tags": {
+          "og:type": "website",
+          "og:title": "The FlexFlow \u2014 Found, ranked and quoted. Founder-led marketing.",
+          "og:description": "Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility (GEO/AEO), SEO, performance marketing, brand identity and social.",
+          "og:url": "https://theflexflow.in/",
+          "og:image": "https://theflexflow.in/assets/images/logo-mark-signal.png"
+        },
+        "twitter_tags": {
+          "twitter:card": "summary_large_image",
+          "twitter:title": "The FlexFlow \u2014 Founder-led marketing engineering.",
+          "twitter:description": "Web design, AI visibility, SEO, performance marketing, brand systems, and social media. One point of contact.",
+          "twitter:image": "https://theflexflow.in/assets/images/logo-mark-signal.png"
+        },
+        "og_present": [
+          "og:title",
+          "og:description",
+          "og:image",
+          "og:url",
+          "og:type"
+        ],
+        "og_missing": [],
+        "twitter_present": [
+          "twitter:card",
+          "twitter:title",
+          "twitter:description",
+          "twitter:image"
+        ],
+        "twitter_missing": [],
+        "issues": [
+          "\u26a0\ufe0f og:title is too long (63 chars, max 60)"
+        ],
+        "recommendations": [
+          "Add og:image:width and og:image:height for optimal rendering (1200\u00d7630 recommended)"
+        ],
+        "preview": {
+          "title": "The FlexFlow \u2014 Found, ranked and quoted. Founder-led marketing.",
+          "description": "Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility (GEO/AEO), SEO, performance marketing, brand identity and social.",
+          "image": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+          "site_name": ""
+        },
+        "error": null
+      },
+      "redirects": {
+        "url": "https://theflexflow.in/",
+        "final_url": "https://theflexflow.in/",
+        "chain": [
+          {
+            "step": 1,
+            "url": "https://theflexflow.in/",
+            "status": 200,
+            "time_ms": 353,
+            "final": true
+          }
+        ],
+        "total_hops": 0,
+        "total_time_ms": 353,
+        "has_loop": false,
+        "has_mixed_protocol": false,
+        "issues": [],
+        "error": null
+      },
+      "llms_txt": {
+        "url": "https://theflexflow.in/llms.txt",
+        "full_url": "https://theflexflow.in/llms-full.txt",
+        "exists": false,
+        "full_exists": false,
+        "status": 404,
+        "full_status": 404,
+        "parsed": {
+          "title": null,
+          "description": null,
+          "sections": [],
+          "links": []
+        },
+        "quality": {
+          "score": 0,
+          "issues": [
+            "\ud83d\udd34 No llms.txt found"
+          ],
+          "suggestions": [
+            "Create /llms.txt with site name, description, and key page links"
+          ]
+        },
+        "error": null
+      },
+      "broken_links": {
+        "page_url": "https://theflexflow.in/",
+        "total_links": 24,
+        "checked": 24,
+        "broken": [
+          {
+            "url": "https://theflexflow.in/work/abc-tile-ads",
+            "anchor_text": "Read the case study",
+            "is_internal": true,
+            "status": 404,
+            "error": null,
+            "redirect": null,
+            "response_time_ms": 488
+          },
+          {
+            "url": "https://theflexflow.in/work/travel-agency-ads",
+            "anchor_text": "Read the case study",
+            "is_internal": true,
+            "status": 404,
+            "error": null,
+            "redirect": null,
+            "response_time_ms": 492
+          },
+          {
+            "url": "https://theflexflow.in/work/salon-ads",
+            "anchor_text": "Read the case study",
+            "is_internal": true,
+            "status": 404,
+            "error": null,
+            "redirect": null,
+            "response_time_ms": 503
+          },
+          {
+            "url": "https://theflexflow.in/privacy",
+            "anchor_text": "Privacy Policy",
+            "is_internal": true,
+            "status": 404,
+            "error": null,
+            "redirect": null,
+            "response_time_ms": 526
+          },
+          {
+            "url": "https://theflexflow.in/terms",
+            "anchor_text": "Terms of Service",
+            "is_internal": true,
+            "status": 404,
+            "error": null,
+            "redirect": null,
+            "response_time_ms": 465
+          }
+        ],
+        "redirected": [
+          {
+            "url": "https://theflexflow.in/about",
+            "anchor_text": "About",
+            "is_internal": true,
+            "status": 200,
+            "error": null,
+            "redirect": {
+              "from": "https://theflexflow.in/about",
+              "to": "https://theflexflow.in/#about",
+              "hops": 1,
+              "codes": [
+                308
+              ]
+            },
+            "response_time_ms": 58
+          },
+          {
+            "url": "https://wa.me/918929243913",
+            "anchor_text": "[no text]",
+            "is_internal": false,
+            "status": 200,
+            "error": null,
+            "redirect": {
+              "from": "https://wa.me/918929243913",
+              "to": "https://api.whatsapp.com/send/?phone=918929243913&text&type=phone_number&app_absent=0",
+              "hops": 1,
+              "codes": [
+                302
+              ]
+            },
+            "response_time_ms": 1052
+          }
+        ],
+        "timeout": [],
+        "healthy": 17,
+        "summary": {
+          "total": 24,
+          "healthy": 17,
+          "broken": 5,
+          "redirected": 2,
+          "timeout": 0
+        },
+        "issues": [
+          "\ud83d\udd34 5 broken link(s) found"
+        ],
+        "error": null
+      },
+      "internal_links": {
+        "start_url": "https://theflexflow.in/",
+        "domain": "theflexflow.in",
+        "pages_crawled": 16,
+        "total_internal_links": 149,
+        "unique_pages_found": 16,
+        "max_depth_reached": 1,
+        "pages": {
+          "https://theflexflow.in/performance-marketing": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/web-design": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/ai-visibility": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/work/salon-ads": {
+            "outgoing_links": 0,
+            "incoming_links": 2
+          },
+          "https://theflexflow.in/seo": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/terms": {
+            "outgoing_links": 0,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/work/abc-tile-ads": {
+            "outgoing_links": 0,
+            "incoming_links": 2
+          },
+          "https://theflexflow.in/social-media": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/work": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/": {
+            "outgoing_links": 16,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/work/travel-agency-ads": {
+            "outgoing_links": 0,
+            "incoming_links": 2
+          },
+          "https://theflexflow.in/brand-identity": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/about": {
+            "outgoing_links": 16,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/services": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/privacy": {
+            "outgoing_links": 0,
+            "incoming_links": 11
+          },
+          "https://theflexflow.in/contact": {
+            "outgoing_links": 13,
+            "incoming_links": 11
+          }
+        },
+        "anchor_texts": {
+          "The FlexFlow": 11,
+          "About": 11,
+          "Services": 11,
+          "Case Studies": 11,
+          "Contact": 11,
+          "Privacy Policy": 11,
+          "Terms of Service": 11,
+          "Web design": 10,
+          "AI visibility": 10,
+          "SEO": 10,
+          "Performance marketing": 10,
+          "Brand identity": 10,
+          "Social media": 10,
+          "Read the case study": 6,
+          "01Web Design & Build4-Wk Sprint \u2192": 1,
+          "02AI Visibility (GEO/AEO)5-Day Audit \u2192": 1,
+          "03Search OptimizationMonthly Sprint \u2192": 1,
+          "04Performance Marketing7-Day Launch \u2192": 1,
+          "05Brand Identity & System2\u20133 Wk Sprint \u2192": 1,
+          "06Social Content Kit30-Post Batch \u2192": 1
+        },
+        "link_distribution": {
+          "min": 13,
+          "max": 16,
+          "avg": 13.5
+        },
+        "orphan_candidates": [],
+        "nofollow_links": [],
+        "issues": [],
+        "recommendations": [],
+        "error": null
+      },
+      "pagespeed": {
+        "url": "https://theflexflow.in/",
+        "strategy": "mobile",
+        "performance_score": null,
+        "metrics": {},
+        "opportunities": [],
+        "diagnostics": [],
+        "field_data_available": false,
+        "error": "API error: HTTP 403"
+      },
+      "entity": {
+        "url": "https://theflexflow.in/",
+        "entity_name": "The FlexFlow \u2014 Found, ranked and quoted. Founder",
+        "entities_in_schema": [],
+        "sameas_analysis": {
+          "found": {},
+          "missing": {
+            "Wikipedia": {
+              "domain": "wikipedia.org",
+              "priority": "Critical",
+              "kg_signal": "Primary"
+            },
+            "Wikidata": {
+              "domain": "wikidata.org",
+              "priority": "Critical",
+              "kg_signal": "Primary"
+            },
+            "LinkedIn": {
+              "domain": "linkedin.com",
+              "priority": "High",
+              "kg_signal": "Strong"
+            },
+            "Twitter/X": {
+              "domain": "x.com",
+              "priority": "High",
+              "kg_signal": "Strong"
+            }
+          },
+          "issues": [],
+          "total_found": 0,
+          "total_missing_critical": 4
+        },
+        "wikidata": {
+          "found": false,
+          "qid": null,
+          "url": null
+        },
+        "wikipedia": {
+          "found": false,
+          "url": null
+        },
+        "google_kg": {
+          "checked": true,
+          "found": false,
+          "result": null
+        },
+        "nap_issues": [],
+        "issues": [
+          {
+            "severity": "Critical",
+            "area": "Schema",
+            "finding": "No Organization/Person entity found in JSON-LD.",
+            "fix": "Add Organization or Person schema with name, url, logo, and sameAs properties."
+          },
+          {
+            "severity": "Info",
+            "area": "Wikidata",
+            "finding": "No Wikidata entry found for 'The FlexFlow \u2014 Found, ranked and quoted. Founder'.",
+            "fix": "If the entity meets Wikidata notability guidelines, create or improve an item with accurate third-party references. Do not create one solely for SEO."
+          },
+          {
+            "severity": "Info",
+            "area": "Wikipedia",
+            "finding": "No Wikipedia article found for 'The FlexFlow \u2014 Found, ranked and quoted. Founder'.",
+            "fix": "Only pursue Wikipedia if the entity meets independent notability standards. Otherwise, strengthen official schema, sameAs profiles, citations, and About/Contact signals."
+          },
+          {
+            "severity": "Info",
+            "area": "Google Knowledge Graph",
+            "finding": "No Google Knowledge Graph Search API match found for 'The FlexFlow \u2014 Found, ranked and quoted. Founder'.",
+            "fix": "Improve entity consistency across official site schema, sameAs profiles, authoritative mentions, and organization/person pages."
+          },
+          {
+            "severity": "Info",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to Wikipedia (Primary KG signal).",
+            "fix": "Add the existing official 'wikipedia.org' URL to sameAs; do not create this profile solely for SEO."
+          },
+          {
+            "severity": "Info",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to Wikidata (Primary KG signal).",
+            "fix": "Add the existing official 'wikidata.org' URL to sameAs; do not create this profile solely for SEO."
+          },
+          {
+            "severity": "Info",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to LinkedIn (Strong KG signal).",
+            "fix": "Add 'linkedin.com' profile URL to sameAs array in your entity schema."
+          },
+          {
+            "severity": "Info",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to Twitter/X (Strong KG signal).",
+            "fix": "Add 'x.com' profile URL to sameAs array in your entity schema."
+          }
+        ],
+        "summary": {
+          "entities_found": 0,
+          "sameas_count": 0,
+          "sameas_missing_critical": 4,
+          "wikidata_found": false,
+          "wikipedia_found": false,
+          "google_kg_checked": true,
+          "google_kg_found": false,
+          "total_issues": 8
+        }
+      },
+      "link_profile": {
+        "pages_crawled": 1,
+        "total_internal_links": 41,
+        "total_external_links": 2,
+        "unique_internal_targets": 16,
+        "unique_external_domains": 2,
+        "avg_internal_links_per_page": 41.0,
+        "orphan_pages": {
+          "count": 0,
+          "urls": []
+        },
+        "dead_end_pages": {
+          "count": 0,
+          "urls": []
+        },
+        "top_linked_pages": [
+          {
+            "url": "https://theflexflow.in/services",
+            "inbound_links": 9
+          },
+          {
+            "url": "https://theflexflow.in/contact",
+            "inbound_links": 8
+          },
+          {
+            "url": "https://theflexflow.in/",
+            "inbound_links": 5
+          },
+          {
+            "url": "https://theflexflow.in/work",
+            "inbound_links": 5
+          },
+          {
+            "url": "https://theflexflow.in/about",
+            "inbound_links": 3
+          },
+          {
+            "url": "https://theflexflow.in/work/abc-tile-ads",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/work/travel-agency-ads",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/work/salon-ads",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/web-design",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/ai-visibility",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/seo",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/performance-marketing",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/brand-identity",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/social-media",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/privacy",
+            "inbound_links": 1
+          },
+          {
+            "url": "https://theflexflow.in/terms",
+            "inbound_links": 1
+          }
+        ],
+        "top_external_domains": [
+          {
+            "domain": "www.instagram.com",
+            "links": 1
+          },
+          {
+            "domain": "wa.me",
+            "links": 1
+          }
+        ],
+        "issues": [],
+        "site_url": "https://theflexflow.in/"
+      },
+      "hreflang": {
+        "url": "https://theflexflow.in/",
+        "implementation_method": "none",
+        "hreflang_tags_found": 0,
+        "tags": [],
+        "sitemap": {
+          "found": false,
+          "url": "https://theflexflow.in/sitemap.xml",
+          "has_xhtml_namespace": false,
+          "language_variants_found": [],
+          "note": "No hreflang found in sitemap."
+        },
+        "checks": {
+          "hreflang_present": {
+            "passed": false,
+            "severity": "Info",
+            "finding": "No hreflang tags found (HTML, HTTP headers, or sitemap).",
+            "fix": "If this is a single-language site, hreflang is not needed. For multi-language sites, implement hreflang via HTML link tags or sitemap."
+          }
+        },
+        "language_code_issues": [],
+        "return_tag_checks": [],
+        "summary": {
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0,
+          "passed": 0
+        }
+      },
+      "duplicate_content": {
+        "pages_analyzed": 17,
+        "exact_duplicates": [
+          {
+            "type": "exact_duplicate",
+            "severity": "Critical",
+            "urls": [
+              "https://theflexflow.in/",
+              "https://theflexflow.in",
+              "https://theflexflow.in/about"
+            ],
+            "finding": "3 indexable pages have identical content.",
+            "fix": "Consolidate into a single canonical page and redirect duplicates with 301."
+          }
+        ],
+        "near_duplicates": [],
+        "thin_content": [
+          {
+            "type": "thin_content",
+            "severity": "Critical",
+            "url": "https://theflexflow.in/privacy",
+            "word_count": 0,
+            "threshold": 300,
+            "finding": "Only 0 words (minimum: 300).",
+            "fix": "Expand content to at least 300 words of substantive, unique content, or noindex if low-value."
+          },
+          {
+            "type": "thin_content",
+            "severity": "Critical",
+            "url": "https://theflexflow.in/work/abc-tile-ads",
+            "word_count": 0,
+            "threshold": 300,
+            "finding": "Only 0 words (minimum: 300).",
+            "fix": "Expand content to at least 300 words of substantive, unique content, or noindex if low-value."
+          },
+          {
+            "type": "thin_content",
+            "severity": "Critical",
+            "url": "https://theflexflow.in/work/travel-agency-ads",
+            "word_count": 0,
+            "threshold": 300,
+            "finding": "Only 0 words (minimum: 300).",
+            "fix": "Expand content to at least 300 words of substantive, unique content, or noindex if low-value."
+          },
+          {
+            "type": "thin_content",
+            "severity": "Critical",
+            "url": "https://theflexflow.in/terms",
+            "word_count": 0,
+            "threshold": 300,
+            "finding": "Only 0 words (minimum: 300).",
+            "fix": "Expand content to at least 300 words of substantive, unique content, or noindex if low-value."
+          },
+          {
+            "type": "thin_content",
+            "severity": "Critical",
+            "url": "https://theflexflow.in/work/salon-ads",
+            "word_count": 0,
+            "threshold": 300,
+            "finding": "Only 0 words (minimum: 300).",
+            "fix": "Expand content to at least 300 words of substantive, unique content, or noindex if low-value."
+          }
+        ],
+        "summary": {
+          "exact_duplicate_groups": 1,
+          "near_duplicate_pairs": 0,
+          "thin_pages": 5,
+          "avg_word_count": 738
+        }
+      },
+      "onpage": {
+        "title": "The FlexFlow \u2014 Found, ranked and quoted. Founder-led marketing.",
+        "meta_description": "Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility (GEO/AEO), SEO, performance marketing, brand identity and social \u2014 one point of contact.",
+        "meta_robots": null,
+        "x_robots_tag": null,
+        "canonical": null,
+        "lang": "en",
+        "charset": "utf-8",
+        "viewport": "width=device-width, initial-scale=1",
+        "favicon": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+        "h1": [
+          "Someone asked AI who to hire.It didn't sayyou."
+        ],
+        "h2": [
+          "Six sentences clients say before they call. Each one has a fix.",
+          "Six disciplines. Most people start with one.",
+          "The person who scopes the work is the person who builds it.",
+          "Every case ends in a number.",
+          "Audit, plan, execute, results. You see the plan before anything is built.",
+          "Pick a time. Thirty minutes, no deck.",
+          "The questions that come up on every first call.",
+          "You already knowthe site needs tochange."
+        ],
+        "h3": [
+          "Web design",
+          "AI visibility",
+          "Search optimization",
+          "Performance marketing",
+          "Brand identity",
+          "Social media",
+          "Showroom leads at \u20b955.59",
+          "160+ booking enquiries on a budget smaller than rent",
+          "1.08M city impressions at \u20b92.35 CPM",
+          "Audit",
+          "Plan",
+          "Execute",
+          "Results"
+        ],
+        "h4": [
+          "Template Bloat & 4.8s Load",
+          "Sub-Second Static DOM",
+          "Zero Schema Entity Graph",
+          "Entity Graph & Token Mapping",
+          "Vanity Retainers & Crawl Debt",
+          "Commercial Intent Clusters",
+          "Unmeasured Ad Spend",
+          "Target CPL & Direct CRM Sync",
+          "Fragmented Brand Assets",
+          "Unbreakable Design Tokens",
+          "Ad-Hoc Inconsistent Cadence",
+          "30-Post Production Batch"
+        ],
+        "h5": [],
+        "h6": [],
+        "images": [
+          {
+            "src": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+            "alt": "",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": null
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/figma-design-board.jpg",
+            "alt": "Figma Design System Component Board",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/entity-graph-diagram.svg",
+            "alt": "Schema.org Entity Knowledge Graph Diagram",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/case-abc-tile.jpg",
+            "alt": "High-Converting Meta Ad Creative Preview",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/brand-system-board.jpg",
+            "alt": "Brand Identity Guidelines and Type Specimen",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/social-grid-board.jpg",
+            "alt": "Curated 30-Day Social Media Grid",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/founder-portrait.jpg",
+            "alt": "Hamza - Founder of The FlexFlow in Studio Workspace",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/case-abc-tile.jpg",
+            "alt": "ABC Group Architectural Showroom Ceramic Tiles Creative",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/case-voyage-travel.jpg",
+            "alt": "Voyage India Luxury Kashmir Dal Lake Travel Package",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/case-zara-spa.jpg",
+            "alt": "Zara Salon & Spa Luxury Wellness Treatment Facility",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/process-pipeline.svg",
+            "alt": "4-Week Delivery Pipeline Architecture",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": "lazy"
+          },
+          {
+            "src": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+            "alt": "",
+            "width": null,
+            "height": null,
+            "is_responsive_fill": false,
+            "loading": null
+          }
+        ],
+        "links": {
+          "internal": [
+            {
+              "href": "https://theflexflow.in/",
+              "text": "The FlexFlow",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/",
+              "text": "Home",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/about",
+              "text": "About",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services",
+              "text": "Services",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/work",
+              "text": "Case Studies",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/contact",
+              "text": "Contact",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/",
+              "text": "01Home",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/about",
+              "text": "02About",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services",
+              "text": "03Services",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/work",
+              "text": "04Case Studies",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/contact",
+              "text": "05Contact",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/contact",
+              "text": "Book a 30-min call",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/work",
+              "text": "See the case studies",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services#web",
+              "text": "Scope web build \u2192",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services#ai-visibility",
+              "text": "Check AI visibility \u2192",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services#seo",
+              "text": "Scope SEO sprint \u2192",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services#performance",
+              "text": "Launch campaign \u2192",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services#brand",
+              "text": "View brand systems \u2192",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services#social",
+              "text": "Get social kit \u2192",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/work/abc-tile-ads",
+              "text": "Read the case study",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/work/travel-agency-ads",
+              "text": "Read the case study",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/work/salon-ads",
+              "text": "Read the case study",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/work",
+              "text": "See all case studies \u2192",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/contact",
+              "text": "Send the details instead",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/contact",
+              "text": "Book a 30-min call",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/contact",
+              "text": "Ask a question",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/contact",
+              "text": "Book a 30-min call",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/",
+              "text": "The FlexFlow",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/",
+              "text": "Home",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/about",
+              "text": "About",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/services",
+              "text": "Services",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/work",
+              "text": "Case Studies",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/contact",
+              "text": "Contact",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/web-design",
+              "text": "Web design",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/ai-visibility",
+              "text": "AI visibility",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/seo",
+              "text": "SEO",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/performance-marketing",
+              "text": "Performance marketing",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/brand-identity",
+              "text": "Brand identity",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/social-media",
+              "text": "Social media",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/privacy",
+              "text": "Privacy Policy",
+              "rel": []
+            },
+            {
+              "href": "https://theflexflow.in/terms",
+              "text": "Terms of Service",
+              "rel": []
+            }
+          ],
+          "external": [
+            {
+              "href": "https://www.instagram.com/_theflexflow/",
+              "text": "",
+              "rel": [
+                "noopener",
+                "noreferrer"
+              ]
+            },
+            {
+              "href": "https://wa.me/918929243913",
+              "text": "",
+              "rel": [
+                "noopener",
+                "noreferrer"
+              ]
+            },
+            {
+              "href": "mailto:hamza@theflexflow.in",
+              "text": "hamza@theflexflow.in",
+              "rel": []
+            },
+            {
+              "href": "tel:+918929243913",
+              "text": "+91 89292 43913",
+              "rel": []
+            }
+          ]
+        },
+        "pagination": {
+          "prev": null,
+          "next": null
+        },
+        "resource_hints": {
+          "preload": [],
+          "preconnect": [
+            {
+              "href": "https://cdnjs.cloudflare.com",
+              "as": null,
+              "type": null,
+              "crossorigin": ""
+            }
+          ],
+          "dns-prefetch": [],
+          "prefetch": [],
+          "prerender": []
+        },
+        "schema": [
+          {
+            "@type": "ProfessionalService",
+            "@types": [
+              "ProfessionalService"
+            ],
+            "@id": null,
+            "@context": "https://schema.org",
+            "status": "active",
+            "note": "",
+            "has_context": true,
+            "has_type": true,
+            "from_graph": false,
+            "raw": {
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "The FlexFlow",
+              "url": "https://theflexflow.in",
+              "logo": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+              "description": "Founder-led marketing engineering across Web Design, AI Visibility (GEO/AEO), SEO, Performance Marketing, Brand Identity, and Social Media.",
+              "founder": {
+                "@type": "Person",
+                "name": "Hamza"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "E-82/b, Abul Fazal Enclave, Okhla",
+                "addressLocality": "New Delhi",
+                "postalCode": "110025",
+                "addressCountry": "IN"
+              },
+              "telephone": "+918929243913",
+              "email": "hamza@theflexflow.in",
+              "sameAs": [
+                "https://www.instagram.com/_theflexflow/"
+              ]
+            }
+          }
+        ],
+        "open_graph": {
+          "og:type": "website",
+          "og:title": "The FlexFlow \u2014 Found, ranked and quoted. Founder-led marketing.",
+          "og:description": "Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility (GEO/AEO), SEO, performance marketing, brand identity and social.",
+          "og:url": "https://theflexflow.in/",
+          "og:image": "https://theflexflow.in/assets/images/logo-mark-signal.png"
+        },
+        "twitter_card": {
+          "twitter:card": "summary_large_image",
+          "twitter:title": "The FlexFlow \u2014 Founder-led marketing engineering.",
+          "twitter:description": "Web design, AI visibility, SEO, performance marketing, brand systems, and social media. One point of contact.",
+          "twitter:image": "https://theflexflow.in/assets/images/logo-mark-signal.png"
+        },
+        "word_count": 2101,
+        "hreflang": []
+      },
+      "readability": {
+        "word_count": 1168,
+        "sentence_count": 74,
+        "paragraph_count": 88,
+        "syllable_count": 1780,
+        "avg_sentence_length": 15.8,
+        "avg_paragraph_length": 0.8,
+        "avg_syllables_per_word": 1.52,
+        "flesch_reading_ease": 61.9,
+        "flesch_kincaid_grade": 8.5,
+        "reading_level": "Standard (7th-8th grade)",
+        "estimated_reading_time_min": 5.8,
+        "complex_words": 158,
+        "complex_word_pct": 13.5,
+        "issues": [],
+        "recommendations": [],
+        "sentence_rewrites": []
+      },
+      "article": {
+        "url": "https://theflexflow.in/",
+        "cms_detected": "generic",
+        "title": "The FlexFlow \u2014 Found, ranked and quoted. Founder-led marketing.",
+        "meta_description": "Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility (GEO/AEO), SEO, performance marketing, brand identity and social \u2014 one point of contact.",
+        "og_description": "Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility (GEO/AEO), SEO, performance marketing, brand identity and social.",
+        "author": "",
+        "publish_date": "",
+        "labels": [],
+        "headings": {
+          "h1": [],
+          "h2": [],
+          "h3": []
+        },
+        "paragraphs": [
+          "\u201cOur site looks like it was built in 2016 \u2014 and loads like it.\u201d",
+          "18 unmaintained plugins, heavy layout shifts, and mobile abandonment before the first fold renders.",
+          "Hand-crafted semantic DOM, 99+ Lighthouse performance score, and instant edge CDN distribution."
+        ],
+        "images": [],
+        "structured_data": [
+          {
+            "@type": "ProfessionalService",
+            "@context": "https://schema.org",
+            "status": "active",
+            "note": "",
+            "has_context": true,
+            "has_type": true,
+            "raw": {
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "The FlexFlow",
+              "url": "https://theflexflow.in",
+              "logo": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+              "description": "Founder-led marketing engineering across Web Design, AI Visibility (GEO/AEO), SEO, Performance Marketing, Brand Identity, and Social Media.",
+              "founder": {
+                "@type": "Person",
+                "name": "Hamza"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "E-82/b, Abul Fazal Enclave, Okhla",
+                "addressLocality": "New Delhi",
+                "postalCode": "110025",
+                "addressCountry": "IN"
+              },
+              "telephone": "+918929243913",
+              "email": "hamza@theflexflow.in",
+              "sameAs": [
+                "https://www.instagram.com/_theflexflow/"
+              ]
+            }
+          }
+        ],
+        "readability": {
+          "flesch_reading_ease": 58.4,
+          "fkgl": 8.1,
+          "grade_label": "Medium (suitable for high school / college)",
+          "word_count": 36,
+          "sentence_count": 3,
+          "avg_sentence_length": 12.0,
+          "avg_syllables_per_word": 1.61
+        },
+        "target_keyword": "",
+        "extracted_keywords": [],
+        "related_keywords": [],
+        "seo_issues": [
+          {
+            "severity": "Warning",
+            "area": "Meta Description",
+            "finding": "Meta description may be truncated (204 chars).",
+            "fix": "Keep under 155 characters."
+          },
+          {
+            "severity": "Critical",
+            "area": "H1",
+            "finding": "No H1 tag detected.",
+            "fix": "Add a single, descriptive H1 containing the primary keyword."
+          },
+          {
+            "severity": "Critical",
+            "area": "Content",
+            "finding": "Very thin content (36 words).",
+            "fix": "Expand content to at least 1,500 words for blog posts."
+          },
+          {
+            "severity": "Warning",
+            "area": "E-E-A-T",
+            "finding": "No author attribution detected.",
+            "fix": "Add a visible author byline with credentials. Critical post-Dec 2025 E-E-A-T update."
+          },
+          {
+            "severity": "Info",
+            "area": "Freshness",
+            "finding": "No publish date detected in markup.",
+            "fix": "Add visible publish/update date and datePublished in Article schema."
+          }
+        ]
+      }
+    },
+    "environment": {
+      "primary": "Unknown",
+      "runtime": "Unknown",
+      "confidence": "low",
+      "signals": [
+        "No strong CMS/framework markers were found in HTML source."
+      ],
+      "alternatives": []
+    },
+    "environment_fixes": [
+      {
+        "severity": "warning",
+        "title": "Meta description is missing or out of range",
+        "reason": "This can reduce SERP CTR and snippet quality.",
+        "fix": "Update page templates to set complete title/meta/OG/Twitter tags."
+      },
+      {
+        "severity": "critical",
+        "title": "5 security headers missing",
+        "reason": "Missing headers reduce trust and can expose the site to browser/security risks.",
+        "fix": "Set missing security headers at web server or CDN layer."
+      },
+      {
+        "severity": "warning",
+        "title": "No llms.txt found",
+        "reason": "AI crawlers and assistants have no curated machine-readable guidance for key pages.",
+        "fix": "Add `/llms.txt` at site root with concise site description and key URLs."
+      },
+      {
+        "severity": "critical",
+        "title": "5 broken links detected",
+        "reason": "Broken internal links hurt crawl flow and user trust.",
+        "fix": "Repair or remove broken internal links and refresh outdated navigation targets."
+      },
+      {
+        "severity": "info",
+        "title": "Performance measurement incomplete",
+        "reason": "PageSpeed API returned an error, so CWV recommendations are less reliable.",
+        "fix": "Set `PAGESPEED_API_KEY` in your environment or `.env` file (see `.env.example`), then rerun. The CLI also accepts `--api-key`. Prioritize LCP/INP/CLS fixes from that output."
+      }
+    ]
+  }
+}
