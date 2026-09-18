@@ -74,7 +74,7 @@
         <a href="/contact" aria-current="page" class="active">Contact</a>
       </nav>
 
-      <a class="button button-primary button-small navigation-cta-desktop" href="/contact" data-spell="magnetic">Book a 30-min call</a>
+      <a class="button button-primary button-small navigation-cta-desktop" href="#booking" data-spell="magnetic">Book a 30-min call</a>
 
       <button class="navigation-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false"
         aria-controls="navMenu">
@@ -91,7 +91,7 @@
         <a href="/contact" aria-current="page" class="active"><span class="navigation-menu-number">05</span><span class="navigation-menu-label">Contact</span></a>
       </nav>
       <div class="navigation-menu-footer">
-        <a class="button button-primary button-large" href="/contact" data-spell="magnetic">Book a 30-min call</a>
+        <a class="button button-primary button-large" href="#booking" data-spell="magnetic">Book a 30-min call</a>
       </div>
     </div>
   </header>
@@ -141,33 +141,43 @@
                   <i class="fa-brands fa-whatsapp text-signal"></i> +91 89292 43913
                 </a>
               </div>
-            </div>
-          </div>
 
-          <!-- Interactive Booking Card -->
-          <div class="book-embed">
-            <div class="book-slot">
-              <span class="monospace"><i class="fa-solid fa-bolt text-signal"></i> 30 minutes · Mon–Fri · IST / Flexible</span>
-              <h3 style="font-size: 20px; font-family: var(--font-display); margin-top: 8px; color: #FFFFFF;">Live Founder Scoping Slot</h3>
-              <p>Select a time that suits you. If you need a custom timezone accommodation or prefer written correspondence, send the project brief over instead.</p>
-              
               <!-- Direct Inquiry Scope Box -->
-              <div style="background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 18px; margin: 16px 0; text-align: left;">
-                <span style="font-family: var(--font-mono, monospace); font-size: 11px; color: var(--signal-500); text-transform: uppercase; font-weight: 700;">Direct Project Brief</span>
-                <p style="font-size: 13px; color: var(--ink-200); margin: 6px 0 14px;">Include your current website URL and primary target (e.g. redesign, AI citation authority, paid ad acquisition).</p>
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 18px; margin-top: 8px; text-align: left;">
+                <span style="font-family: var(--font-mono, monospace); font-size: 11px; color: var(--signal-500); text-transform: uppercase; font-weight: 700; letter-spacing: 0.06em;">Prefer to write it down?</span>
+                <p style="font-size: 13px; color: var(--ink-200); margin: 6px 0 12px; line-height: 1.5;">Send your site URL and current growth bottleneck directly to founder inbox. Responses within 4 hours.</p>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
-                  <input type="text" id="briefUrl" placeholder="Your current website URL (e.g. brand.com)" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; padding: 10px 14px; font-size: 13px; color: #fff; outline: none; font-family: var(--font-body);">
-                  <textarea id="briefScope" rows="3" placeholder="What are you looking to build or optimize?" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; padding: 10px 14px; font-size: 13px; color: #fff; outline: none; font-family: var(--font-body); resize: vertical;"></textarea>
-                  <a href="mailto:hamza@theflexflow.in?subject=Project%20Scope%20Inquiry" class="button button-primary button-small" style="width: 100%; justify-content: center; margin-top: 4px;" data-spell="magnetic">
-                    <i class="fa-solid fa-paper-plane"></i> Send Scope to Founder
+                  <a href="mailto:hamza@theflexflow.in?subject=Project%20Scope%20Inquiry" class="button button-primary button-small" style="width: 100%; justify-content: center;" data-spell="magnetic">
+                    <i class="fa-solid fa-paper-plane"></i> Send Scope via Email
                   </a>
                 </div>
               </div>
 
-              <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; color: var(--ink-300); font-family: var(--font-mono, monospace);">
-                <span class="status-dot"></span> 1 Client Slot Open (Q3 2026) · Direct Response in &lt; 4 Hours
+              <div style="display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-300); font-family: var(--font-mono, monospace); margin-top: 4px;">
+                <span class="status-dot"></span> 1 Client Slot Open (Q3 2026) · Direct Founder Reply
               </div>
             </div>
+          </div>
+
+          <!-- Interactive Booking Card -->
+          <div class="book-embed" style="min-height: 700px; background: rgba(13, 13, 18, 0.7); border: 1px solid var(--rule-on-ink); border-radius: 8px; overflow: hidden;">
+            <!-- Cal inline embed code begins -->
+            <div style="width:100%;height:100%;min-height:700px;overflow:auto" id="my-cal-inline-30min"></div>
+            <script type="text/javascript">
+              (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+              Cal("init", "30min", {origin:"https://app.cal.com"});
+              Cal.config = Cal.config || {};
+              Cal.config.forwardQueryParams = true;
+
+              Cal.ns["30min"]("inline", {
+                elementOrSelector:"#my-cal-inline-30min",
+                config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+                calLink: "hamza-khan-theflexflow/30min",
+              });
+
+              Cal.ns["30min"]("ui", {"theme":"dark","cssVarsPerTheme":{"light":{"cal-brand":"#E8362B"},"dark":{"cal-brand":"#E8362B"}},"hideEventTypeDetails":false,"layout":"month_view"});
+            </script>
+            <!-- Cal inline embed code ends -->
           </div>
         </div>
       </div>
