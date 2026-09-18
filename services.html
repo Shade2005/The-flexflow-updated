@@ -15,6 +15,8 @@
   <meta property="og:description" content="Deep-dive into The FlexFlow's six core disciplines: Web Design, AI Visibility (GEO/AEO), SEO, Performance Marketing, Brand Identity, and Social Media.">
   <meta property="og:url" content="https://theflexflow.in/services">
   <link rel="canonical" href="https://theflexflow.in/services">
+  <meta property="og:site_name" content="The FlexFlow">
+  <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://theflexflow.in/assets/images/logo-mark-signal.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -34,22 +36,43 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "The FlexFlow Six Disciplines",
-    "provider": {
-      "@type": "ProfessionalService",
-      "name": "The FlexFlow",
-      "url": "https://theflexflow.in"
-    },
-    "serviceType": [
-      "Web Design and Custom Architecture",
-      "AI Visibility (GEO/AEO)",
-      "Search Engine Optimization",
-      "Performance Marketing",
-      "Brand Identity Systems",
-      "Social Media Content"
-    ],
-    "url": "https://theflexflow.in/services"
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "The FlexFlow Six Disciplines",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "The FlexFlow",
+          "url": "https://theflexflow.in"
+        },
+        "serviceType": [
+          "Web Design and Custom Architecture",
+          "AI Visibility (GEO/AEO)",
+          "Search Engine Optimization",
+          "Performance Marketing",
+          "Brand Identity Systems",
+          "Social Media Content"
+        ],
+        "url": "https://theflexflow.in/services"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://theflexflow.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://theflexflow.in/services"
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
