@@ -1,4 +1,4 @@
-# The FlexFlow — Complete Agency Information & Capabilities Manifest
+# The FlexFlow - Complete Agency Information & Capabilities Manifest
 
 > Founder-led marketing engineering. The FlexFlow designs, builds, and scales digital marketing architectures across Web Design, Generative Engine Optimization (GEO/AEO), Search Engine Optimization (SEO), Paid Performance Ads, Brand Identity, and Social Media.
 
@@ -11,6 +11,7 @@
 - Phone / WhatsApp: +91 8929243913
 - Headquarters: E-82/b, A.F.E, Okhla, New Delhi - 110025, India
 - Official URL: https://theflexflow.in
+- Journal & Field Notes: https://theflexflow.in/blog
 - Social Presence: Instagram (https://www.instagram.com/__khanfident/), LinkedIn (https://www.linkedin.com/in/hamza-khan-the-flexflow/)
 
 ## The Core Problem Addressed

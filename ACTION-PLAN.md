@@ -1,31 +1,31 @@
 # Action Plan
 
 - URL: `https://theflexflow.in`
-- Overall score: `89/100`
+- Overall score: `92/100`
 
 ## Priority Fixes
 
-1. **No Organization/Person entity found in JSON-LD.**
-   - Priority: `Critical`
-   - Area: `Schema`
-   - Evidence: See audit output.
-   - Fix: Add Organization or Person schema with name, url, logo, and sameAs properties.
-2. **1 security headers missing**
+1. **sameAs URL returns HTTP 404: https://www.linkedin.com/company/theflexflow/**
    - Priority: `Warning`
-   - Area: `environment`
-   - Evidence: Missing headers reduce trust and can expose the site to browser/security risks.
-   - Fix: Set missing security headers at web server or CDN layer.
-3. **No Google Knowledge Graph Search API match found for 'The FlexFlow — Found, ranked and quoted. Founder'.**
+   - Area: `entity`
+   - Evidence: See audit output.
+   - Fix: Update sameAs URL for LinkedIn to a valid, non-redirecting destination.
+2. **sameAs URL returns HTTP 404: https://x.com/theflexflow**
+   - Priority: `Warning`
+   - Area: `entity`
+   - Evidence: See audit output.
+   - Fix: Update sameAs URL for Twitter/X to a valid, non-redirecting destination.
+3. **No Google Knowledge Graph Search API match found for 'The FlexFlow'.**
    - Priority: `Info`
    - Area: `Google Knowledge Graph`
    - Evidence: See audit output.
    - Fix: Improve entity consistency across official site schema, sameAs profiles, authoritative mentions, and organization/person pages.
-4. **No Wikidata entry found for 'The FlexFlow — Found, ranked and quoted. Founder'.**
+4. **No Wikidata entry found for 'The FlexFlow'.**
    - Priority: `Info`
    - Area: `Wikidata`
    - Evidence: See audit output.
    - Fix: If the entity meets Wikidata notability guidelines, create or improve an item with accurate third-party references. Do not create one solely for SEO.
-5. **No Wikipedia article found for 'The FlexFlow — Found, ranked and quoted. Founder'.**
+5. **No Wikipedia article found for 'The FlexFlow'.**
    - Priority: `Info`
    - Area: `Wikipedia`
    - Evidence: See audit output.
@@ -45,13 +45,3 @@
    - Area: `sameAs`
    - Evidence: See audit output.
    - Fix: Add the existing official 'wikidata.org' URL to sameAs; do not create this profile solely for SEO.
-9. **Missing sameAs link to LinkedIn (Strong KG signal).**
-   - Priority: `Info`
-   - Area: `sameAs`
-   - Evidence: See audit output.
-   - Fix: Add 'linkedin.com' profile URL to sameAs array in your entity schema.
-10. **Missing sameAs link to Twitter/X (Strong KG signal).**
-   - Priority: `Info`
-   - Area: `sameAs`
-   - Evidence: See audit output.
-   - Fix: Add 'x.com' profile URL to sameAs array in your entity schema.

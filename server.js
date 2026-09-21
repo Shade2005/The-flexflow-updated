@@ -27,8 +27,13 @@ const server = http.createServer((req, res) => {
   const parsedUrl = new URL(req.url, `http://localhost:${PORT}`);
   let pathname = decodeURIComponent(parsedUrl.pathname);
 
+  // Strip trailing slash except for root
+  if (pathname.length > 1 && pathname.endsWith('/')) {
+    pathname = pathname.slice(0, -1);
+  }
+
   // Default to index.html for root
-  if (pathname === '/') {
+  if (pathname === '/' || pathname === '') {
     pathname = '/index.html';
   }
 
@@ -36,29 +41,30 @@ const server = http.createServer((req, res) => {
 
   // Check if direct file exists
   fs.stat(filePath, (err, stats) => {
-    if (err || !stats.isFile()) {
-      // Try appending .html for clean routes (e.g. /services -> /services.html)
+    if (!err && stats.isFile()) {
+      const ext = path.extname(filePath).toLowerCase();
+      return serveFile(filePath, ext, res);
+    }
+
+    // Check if it's a directory with index.html
+    const dirIndex = path.join(filePath, 'index.html');
+    fs.stat(dirIndex, (dirErr, dirStats) => {
+      if (!dirErr && dirStats.isFile()) {
+        return serveFile(dirIndex, '.html', res);
+      }
+
+      // Try appending .html for clean routes (e.g. /services -> /services.html, /blog -> /blog.html)
       const htmlPath = filePath + '.html';
       fs.stat(htmlPath, (htmlErr, htmlStats) => {
         if (!htmlErr && htmlStats.isFile()) {
-          serveFile(htmlPath, '.html', res);
-        } else {
-          // Fallback to index.html
-          const fallback = path.join(ROOT, 'index.html');
-          fs.stat(fallback, (fbErr, fbStats) => {
-            if (!fbErr && fbStats.isFile()) {
-              serveFile(fallback, '.html', res);
-            } else {
-              res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-              res.end('404 Not Found');
-            }
-          });
+          return serveFile(htmlPath, '.html', res);
         }
+
+        // 404 Not Found
+        res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+        res.end('404 Not Found');
       });
-    } else {
-      const ext = path.extname(filePath).toLowerCase();
-      serveFile(filePath, ext, res);
-    }
+    });
   });
 });
 

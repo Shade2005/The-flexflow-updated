@@ -1,6 +1,6 @@
 # The FlexFlow
 
-> Founder-led marketing engineering for high-growth businesses. Specializing in conversion-focused Web Design, AI Visibility (GEO/AEO), Search Engine Optimization, Performance Marketing Ads, Brand Systems, and Social Content Kits. Every client works directly with the founder doing the execution—no junior handoffs or account managers.
+> Founder-led marketing engineering for high-growth businesses. Specializing in conversion-focused Web Design, AI Visibility (GEO/AEO), Search Engine Optimization, Performance Marketing Ads, Brand Systems, and Social Content Kits. Every client works directly with the founder doing the execution-no junior handoffs or account managers.
 
 ## Core Services
 
@@ -30,5 +30,6 @@
 
 - Website: https://theflexflow.in
 - Call Booking: https://theflexflow.in/contact
+- Journal & Field Notes: https://theflexflow.in/blog
 - Founder: Hamza (hamza@theflexflow.in)
 - Location: New Delhi, India

@@ -84,12 +84,15 @@ def extract_entities_from_schema(soup: BeautifulSoup) -> list:
             if not isinstance(item, dict):
                 continue
             schema_type = item.get("@type", "")
-            # Look for entity types
-            if schema_type in ("Organization", "Person", "Corporation",
-                               "LocalBusiness", "Brand", "MedicalOrganization",
-                               "EducationalOrganization", "GovernmentOrganization"):
+            types = schema_type if isinstance(schema_type, list) else [schema_type]
+            entity_types = ("Organization", "Person", "Corporation",
+                            "LocalBusiness", "Brand", "MedicalOrganization",
+                            "EducationalOrganization", "GovernmentOrganization",
+                            "ProfessionalService")
+            if any(t in entity_types for t in types):
+                primary_type = next((t for t in types if t in entity_types), types[0] if types else "")
                 entities.append({
-                    "type": schema_type,
+                    "type": primary_type,
                     "name": item.get("name", ""),
                     "url": item.get("url", ""),
                     "sameAs": item.get("sameAs", []),

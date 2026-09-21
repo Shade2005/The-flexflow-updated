@@ -28,8 +28,8 @@
 }
 
 /* ---------- colour ----------
-   INK — base neutral, hue 275. Two blacks nudged to a visible blue-violet bias, extended to
-   a full scale. SIGNAL — the only accent, carries action, never decoration. */
+   INK - base neutral, hue 275. Two blacks nudged to a visible blue-violet bias, extended to
+   a full scale. SIGNAL - the only accent, carries action, never decoration. */
 :root {
    color-scheme: dark;
    background-color: #0C0B12;
@@ -49,7 +49,7 @@
    --signal-100: #FBD5CF;
    --signal-050: #FDEEEB;
 
-   /* SEMANTIC — danger moved off red so an error never reads as a primary action. */
+   /* SEMANTIC - danger moved off red so an error never reads as a primary action. */
    --success: #0E8A5F;
    --warning: #C98A00;
    --danger: #A81E4B;
@@ -73,11 +73,11 @@
    --text-on-ink-muted: var(--ink-300);
    --text-on-signal: #FFFFFF;
    --text-accent: var(--signal-600);
-   /* small text on light grounds — 4.01:1 */
+   /* small text on light grounds - 4.01:1 */
    --text-accent-on-ink: var(--signal-300);
-   /* small text on ink — 6.4:1 */
+   /* small text on ink - 6.4:1 */
 
-   /* Lines — the grid stays visible */
+   /* Lines - the grid stays visible */
    --rule-on-ink: rgba(255, 255, 255, .08);
    --rule-on-light: var(--ink-200);
    --rule-strong: var(--ink-950);
@@ -103,15 +103,15 @@
    --track-mono-eyebrow: .10em;
    /* uppercase eyebrows run at +10% in Manrope */
 
-   --size-display: clamp(72px, 7vw, 104px);
+   --size-display: clamp(68px, 6.5vw, 104px);
    --lh-display: .95;
-   --size-h1: 48px;
-   --lh-h1: 1.0;
-   --size-h2: 32px;
-   --lh-h2: 1.1;
-   --size-h3: 22px;
-   --lh-h3: 1.2;
-   --size-body-lg: 19px;
+   --size-h1: clamp(44px, 3.8vw, 56px);
+   --lh-h1: 1.05;
+   --size-h2: clamp(28px, 2.3vw, 36px);
+   --lh-h2: 1.15;
+   --size-h3: clamp(20px, 1.6vw, 24px);
+   --lh-h3: 1.25;
+   --size-body-lg: clamp(18px, 1.2vw, 20px);
    --lh-body-lg: 1.55;
    --size-body: 17px;
    --lh-body: 1.55;
@@ -265,4 +265,41 @@ a:hover {
 .ff-on-ink a {
    color: var(--text-accent-on-ink);
    border-bottom-color: rgba(242, 112, 95, .35)
+}
+
+/* ---------- widescreen monitor responsive scaling ---------- */
+@media (min-width: 1440px) {
+   :root {
+      --container-max: 1380px;
+      --section-y: 112px;
+      --section-y-tight: 76px;
+      --size-h1: clamp(50px, 3.6vw, 62px);
+      --size-h2: clamp(32px, 2.3vw, 40px);
+      --size-display: clamp(76px, 5.8vw, 112px);
+   }
+}
+
+@media (min-width: 1680px) {
+   :root {
+      --container-max: 1520px;
+      --section-y: 124px;
+      --section-y-tight: 84px;
+      --size-h1: clamp(54px, 3.4vw, 68px);
+      --size-h2: clamp(35px, 2.2vw, 44px);
+      --size-display: clamp(84px, 5.4vw, 120px);
+   }
+}
+
+@media (min-width: 1920px) {
+   :root {
+      --container-max: 1640px;
+      --section-y: 136px;
+      --section-y-tight: 92px;
+      --size-h1: clamp(58px, 3.2vw, 74px);
+      --size-h2: clamp(38px, 2.1vw, 48px);
+      --size-display: clamp(92px, 5.2vw, 128px);
+      --space-6: 36px;
+      --space-8: 72px;
+      --space-9: 108px;
+   }
 }

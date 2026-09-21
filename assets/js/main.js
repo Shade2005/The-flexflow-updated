@@ -38,7 +38,7 @@
   measure();
   window.addEventListener('resize', function () {
     measure();
-    /* Coming back up to desktop leaves the menu orphaned — close it. */
+    /* Coming back up to desktop leaves the menu orphaned - close it. */
     if (window.innerWidth > 900 && toggle.getAttribute('aria-expanded') === 'true') setMenu(false);
   }, { passive: true });
 
@@ -1831,6 +1831,8 @@ window.initPageSpells = function () {
     prefetch: prefetch
   };
 })();
+
+
 
 
 

@@ -28,8 +28,10 @@ Desktop.ini
 *.sln
 *.sw?
 
-# Temporary media recordings
-assets/video/Bug.mp4
+# Temporary and scratch
+scratch/
+audit-results.json
+SEO-REPORT.html
 
 # Python bytecode
 __pycache__/
