@@ -75,6 +75,7 @@
     var scrollY = window.scrollY || window.pageYOffset;
     nav.classList.toggle('is-scrolled', scrollY > 40);
   };
+  window.handleNavScroll = handleNavScroll;
   window.addEventListener('scroll', handleNavScroll, { passive: true });
   handleNavScroll();
 })();
@@ -599,6 +600,10 @@ initDisciplineShowcase();
     });
 
     window.__lenis = lenis;
+
+    lenis.on('scroll', function () {
+      if (typeof window.handleNavScroll === 'function') window.handleNavScroll();
+    });
 
     function raf(time) {
       lenis.raf(time);
@@ -1432,9 +1437,396 @@ function initWorkSpells() {
 initWorkSpells();
 
 /* ==========================================================================
+   AI Citation Scanner: Interactive Diagnostic Engine for Hero
+   ========================================================================== */
+function initHeroScanner() {
+  var consoleEl = document.getElementById('heroScannerConsole');
+  if (!consoleEl) return;
+
+  var form = document.getElementById('heroScannerForm');
+  var input = document.getElementById('scannerDomainInput');
+  var clearBtn = document.getElementById('scannerClearBtn');
+  var submitBtn = document.getElementById('scannerSubmitBtn');
+  var errorEl = document.getElementById('scannerInputError');
+  var samplePills = document.querySelectorAll('.sample-domain-pill');
+  var progressState = document.getElementById('scannerProgressState');
+  var progressBar = document.getElementById('scannerProgressBar');
+  var step1 = document.getElementById('telemetryStep1');
+  var step2 = document.getElementById('telemetryStep2');
+  var step3 = document.getElementById('telemetryStep3');
+  var scorecard = document.getElementById('scannerScorecard');
+
+  if (!form || !input || !submitBtn) return;
+
+  // Avoid binding duplicate listeners
+  if (form.dataset.scannerBound === 'true') return;
+  form.dataset.scannerBound = 'true';
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function cleanDomain(val) {
+    if (!val) return '';
+    var s = val.trim().toLowerCase();
+    s = s.replace(/^https?:\/\//, '');
+    s = s.replace(/\/.*$/, '');
+    s = s.replace(/:\d+$/, '');
+    return s;
+  }
+
+  function showError(msg) {
+    if (errorEl) {
+      errorEl.textContent = msg;
+      errorEl.style.display = 'block';
+    }
+  }
+
+  function clearError() {
+    if (errorEl) {
+      errorEl.textContent = '';
+      errorEl.style.display = 'none';
+    }
+  }
+
+  function updateClearBtn() {
+    if (clearBtn) {
+      clearBtn.style.display = input.value.trim().length > 0 ? 'inline-flex' : 'none';
+    }
+  }
+
+  input.addEventListener('input', function () {
+    clearError();
+    updateClearBtn();
+  });
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+      input.value = '';
+      clearError();
+      updateClearBtn();
+      input.focus();
+    });
+  }
+
+  // Bind Quick Sample Pills
+  samplePills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var domain = pill.getAttribute('data-domain');
+      if (domain) {
+        input.value = domain;
+        clearError();
+        updateClearBtn();
+        runScan(domain);
+      }
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    runScan(input.value);
+  });
+
+  var activeTimer1 = null;
+  var activeTimer2 = null;
+  var isScanning = false;
+
+  function runScan(rawInput) {
+    if (isScanning) return;
+    var domain = cleanDomain(rawInput);
+
+    if (!domain || !/^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)+$/.test(domain)) {
+      showError('Please enter a valid live website domain (e.g. yourcompany.com)');
+      input.focus();
+      return;
+    }
+
+    clearError();
+    isScanning = true;
+    submitBtn.classList.add('is-loading');
+    submitBtn.disabled = true;
+    input.disabled = true;
+
+    // Reset progress track
+    if (scorecard) {
+      scorecard.style.display = 'none';
+      scorecard.innerHTML = '';
+    }
+
+    if (progressState) {
+      progressState.style.display = 'block';
+      if (progressBar) progressBar.style.width = '15%';
+
+      if (step1) {
+        step1.className = 'telemetry-step is-active';
+        var icon1 = step1.querySelector('i');
+        if (icon1) icon1.className = 'fa-solid fa-circle-notch fa-spin';
+      }
+      if (step2) {
+        step2.className = 'telemetry-step';
+        var icon2 = step2.querySelector('i');
+        if (icon2) icon2.className = 'fa-regular fa-circle';
+      }
+      if (step3) {
+        step3.className = 'telemetry-step';
+        var icon3 = step3.querySelector('i');
+        if (icon3) icon3.className = 'fa-regular fa-circle';
+      }
+    }
+
+    // Step 2 timer
+    activeTimer1 = setTimeout(function () {
+      if (progressBar) progressBar.style.width = '48%';
+      if (step1) {
+        step1.className = 'telemetry-step is-complete';
+        var i1 = step1.querySelector('i');
+        if (i1) i1.className = 'fa-solid fa-circle-check';
+      }
+      if (step2) {
+        step2.className = 'telemetry-step is-active';
+        var i2 = step2.querySelector('i');
+        if (i2) i2.className = 'fa-solid fa-circle-notch fa-spin';
+      }
+    }, 280);
+
+    // Step 3 timer
+    activeTimer2 = setTimeout(function () {
+      if (progressBar) progressBar.style.width = '82%';
+      if (step2) {
+        step2.className = 'telemetry-step is-complete';
+        var i2 = step2.querySelector('i');
+        if (i2) i2.className = 'fa-solid fa-circle-check';
+      }
+      if (step3) {
+        step3.className = 'telemetry-step is-active';
+        var i3 = step3.querySelector('i');
+        if (i3) i3.className = 'fa-solid fa-circle-notch fa-spin';
+      }
+    }, 620);
+
+    fetch('/api/ai-scan?domain=' + encodeURIComponent(domain))
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        clearTimeout(activeTimer1);
+        clearTimeout(activeTimer2);
+
+        if (progressBar) progressBar.style.width = '100%';
+        if (step3) {
+          step3.className = 'telemetry-step is-complete';
+          var i3 = step3.querySelector('i');
+          if (i3) i3.className = 'fa-solid fa-circle-check';
+        }
+
+        setTimeout(function () {
+          if (progressState) progressState.style.display = 'none';
+          renderScorecard(data);
+          resetScannerControls();
+        }, 220);
+      })
+      .catch(function (err) {
+        clearTimeout(activeTimer1);
+        clearTimeout(activeTimer2);
+        if (progressState) progressState.style.display = 'none';
+        showError('Could not complete scan. Please verify the domain is online and try again.');
+        resetScannerControls();
+      });
+  }
+
+  function resetScannerControls() {
+    isScanning = false;
+    submitBtn.classList.remove('is-loading');
+    submitBtn.disabled = false;
+    input.disabled = false;
+  }
+
+  function renderScorecard(data) {
+    if (!scorecard) return;
+
+    if (!data.success && data.error) {
+      scorecard.innerHTML = 
+        '<div class="scorecard-summary-text" style="border-left-color: #f87171; color: #fca5a5;">' +
+        '<i class="fa-solid fa-triangle-exclamation" style="margin-right:8px;"></i>' +
+        escapeHtml(data.error) +
+        '</div>' +
+        '<div class="scorecard-actions">' +
+        '<button type="button" class="scorecard-reset-btn" id="scorecardResetBtn">' +
+        '<i class="fa-solid fa-rotate-left"></i> Try Another Domain' +
+        '</button>' +
+        '</div>';
+      scorecard.style.display = 'block';
+      bindResetBtn();
+      return;
+    }
+
+    var score = typeof data.score === 'number' ? data.score : 50;
+    var scoreClass = 'score-red';
+    var gradeBadgeClass = 'badge-danger';
+    var verdictIcon = 'fa-solid fa-circle-xmark';
+    var verdictColor = '#f87171';
+
+    if (score >= 80) {
+      scoreClass = 'score-green';
+      gradeBadgeClass = 'badge-success';
+      verdictIcon = 'fa-solid fa-circle-check';
+      verdictColor = '#34d399';
+    } else if (score >= 50) {
+      scoreClass = 'score-amber';
+      gradeBadgeClass = 'badge-warning';
+      verdictIcon = 'fa-solid fa-triangle-exclamation';
+      verdictColor = '#fbbf24';
+    }
+
+    var checks = data.checks || {};
+    var schema = checks.schema || { status: 'warning', label: 'Schema.org Entity Graph', details: 'No schema analysis data', types: [], sameAsCount: 0 };
+    var crawler = checks.crawler || { status: 'warning', label: 'AI Crawler Indexing', details: 'No crawler data', blockedBots: [] };
+    var semantics = checks.semantics || { status: 'warning', label: 'Semantic Extraction', details: 'No semantic data', hasH1: false, hasMetaDesc: false };
+
+    function getStatusIcon(status) {
+      if (status === 'pass') return '<i class="fa-solid fa-circle-check" style="color: #34d399;"></i>';
+      if (status === 'fail') return '<i class="fa-solid fa-circle-xmark" style="color: #f87171;"></i>';
+      return '<i class="fa-solid fa-triangle-exclamation" style="color: #fbbf24;"></i>';
+    }
+
+    var typesText = (schema.types && schema.types.length > 0) ? escapeHtml(schema.types.slice(0, 3).join(', ')) : 'None detected';
+    var sameAsText = (typeof schema.sameAsCount === 'number') ? schema.sameAsCount + ' authority sameAs' : '0 sameAs';
+
+    var blockedList = (crawler.blockedBots && crawler.blockedBots.length > 0) ? escapeHtml(crawler.blockedBots.join(', ')) : 'None (All Bots Allowed)';
+
+    var html = 
+      '<div class="scorecard-header">' +
+        '<div class="scorecard-meter-box">' +
+          '<div class="scorecard-radial-score ' + scoreClass + '">' +
+            '<span class="score-number">' + score + '</span>' +
+            '<span class="score-total">/100</span>' +
+          '</div>' +
+          '<div class="scorecard-title-group">' +
+            '<div class="scorecard-meta-line">' +
+              '<span class="scorecard-domain">' + escapeHtml(data.domain) + '</span>' +
+              '<span class="scorecard-badge ' + gradeBadgeClass + '">GRADE ' + escapeHtml(data.grade || 'N/A') + ' · ' + escapeHtml((data.riskLevel || 'Review').toUpperCase()) + ' RISK</span>' +
+            '</div>' +
+            '<div class="scorecard-verdict">' +
+              '<i class="' + verdictIcon + '" style="color: ' + verdictColor + ';"></i>' +
+              '<span>' + escapeHtml(data.citationVerdict || '') + '</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+        '<div class="scorecard-time">' +
+          '<i class="fa-solid fa-bolt"></i> Scanned in ' + (data.timeMs || 250) + 'ms' +
+        '</div>' +
+      '</div>' +
+
+      '<p class="scorecard-summary-text">' + escapeHtml(data.summary || '') + '</p>' +
+
+      '<div class="scorecard-grid">' +
+        '<!-- Schema Check -->' +
+        '<div class="scorecard-item scorecard-item-' + escapeHtml(schema.status) + '">' +
+          '<div class="item-head">' +
+            getStatusIcon(schema.status) +
+            '<span class="item-title">' + escapeHtml(schema.label) + '</span>' +
+            '<span class="item-status-tag ' + escapeHtml(schema.status) + '">' + escapeHtml(schema.status.toUpperCase()) + '</span>' +
+          '</div>' +
+          '<p class="item-desc">' + escapeHtml(schema.details) + '</p>' +
+          '<div class="item-telemetry">' +
+            '<span>Entities: <strong>' + typesText + '</strong></span>' +
+            '<span>Authority: <strong>' + sameAsText + '</strong></span>' +
+          '</div>' +
+        '</div>' +
+
+        '<!-- Crawler Check -->' +
+        '<div class="scorecard-item scorecard-item-' + escapeHtml(crawler.status) + '">' +
+          '<div class="item-head">' +
+            getStatusIcon(crawler.status) +
+            '<span class="item-title">' + escapeHtml(crawler.label) + '</span>' +
+            '<span class="item-status-tag ' + escapeHtml(crawler.status) + '">' + escapeHtml(crawler.status.toUpperCase()) + '</span>' +
+          '</div>' +
+          '<p class="item-desc">' + escapeHtml(crawler.details) + '</p>' +
+          '<div class="item-telemetry">' +
+            '<span>AI Bot Status: <strong>' + (crawler.status === 'pass' ? 'GPTBot, Perplexity & Claude Allowed' : 'Blocked: ' + blockedList) + '</strong></span>' +
+          '</div>' +
+        '</div>' +
+
+        '<!-- Semantics Check -->' +
+        '<div class="scorecard-item scorecard-item-' + escapeHtml(semantics.status) + '">' +
+          '<div class="item-head">' +
+            getStatusIcon(semantics.status) +
+            '<span class="item-title">' + escapeHtml(semantics.label) + '</span>' +
+            '<span class="item-status-tag ' + escapeHtml(semantics.status) + '">' + escapeHtml(semantics.status.toUpperCase()) + '</span>' +
+          '</div>' +
+          '<p class="item-desc">' + escapeHtml(semantics.details) + '</p>' +
+          '<div class="item-telemetry">' +
+            '<span>H1 & Meta: <strong>' + (semantics.hasH1 && semantics.hasMetaDesc ? 'Detected & Valid' : 'Incomplete') + '</strong></span>' +
+            '<span>DOM Layout: <strong>' + (semantics.status === 'pass' ? 'Semantic Hierarchy' : 'Generic Layout') + '</strong></span>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+
+      '<div class="scorecard-actions">' +
+        '<a href="#book" class="button button-primary button-large scorecard-cta-btn" id="scorecardBookBtn">' +
+          '<span>Fix Your AI Citation Gap (Book 30-min Call)</span>' +
+          '<i class="fa-solid fa-arrow-right"></i>' +
+        '</a>' +
+        '<button type="button" class="scorecard-reset-btn" id="scorecardResetBtn">' +
+          '<i class="fa-solid fa-rotate-left"></i> Scan Another Domain' +
+        '</button>' +
+      '</div>';
+
+    scorecard.innerHTML = html;
+    scorecard.style.display = 'block';
+
+    bindResetBtn();
+    bindBookingAction(data.domain);
+  }
+
+  function bindResetBtn() {
+    var resetBtn = document.getElementById('scorecardResetBtn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function () {
+        scorecard.style.display = 'none';
+        scorecard.innerHTML = '';
+        input.value = '';
+        updateClearBtn();
+        clearError();
+        input.focus();
+      });
+    }
+  }
+
+  function bindBookingAction(domain) {
+    var bookBtn = document.getElementById('scorecardBookBtn');
+    if (!bookBtn) return;
+    bookBtn.addEventListener('click', function (e) {
+      var bookSection = document.getElementById('book');
+      if (bookSection) {
+        if (window.__lenis) {
+          window.__lenis.scrollTo(bookSection, { offset: -40, duration: 1.0 });
+        } else {
+          bookSection.scrollIntoView({ behavior: 'smooth' });
+        }
+        var noteField = bookSection.querySelector('textarea, input[type="url"], input[name*="site"], input[name*="domain"]');
+        if (noteField && domain && !noteField.value) {
+          noteField.value = 'AI Citation Audit for: https://' + domain;
+        }
+      }
+    });
+  }
+
+  updateClearBtn();
+}
+initHeroScanner();
+
+/* ==========================================================================
    MASTER DESIGN SPELLS REHYDRATION LIFECYCLE
    ========================================================================== */
 window.initPageSpells = function () {
+  if (typeof initHeroScanner === 'function') initHeroScanner();
   if (typeof initFaq === 'function') initFaq();
   if (typeof initCounters === 'function') initCounters();
   if (typeof initStack === 'function') initStack();

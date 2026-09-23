@@ -60,6 +60,7 @@
    --surface-ink-raised: var(--ink-900);
    --surface-ink-sunken: #0F0E18;
    --surface-page: var(--ink-050);
+   --surface-canvas: var(--surface-page);
    --surface-card: #FFFFFF;
    --surface-wash: var(--ink-100);
    --surface-signal: var(--signal-500);

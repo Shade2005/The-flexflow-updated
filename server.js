@@ -32,6 +32,18 @@ const server = http.createServer((req, res) => {
     pathname = pathname.slice(0, -1);
   }
 
+  // Serverless API routing
+  if (pathname === '/api/ai-scan' || pathname === '/api/ai-scan.js') {
+    try {
+      const scanHandler = require('./api/ai-scan.js');
+      return scanHandler(req, res);
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Server error handling scan: ' + err.message }));
+      return;
+    }
+  }
+
   // Default to index.html for root
   if (pathname === '/' || pathname === '') {
     pathname = '/index.html';
