@@ -9,11 +9,6 @@
       "permanent": true
     },
     {
-      "source": "/work/abc-tile-ads",
-      "destination": "/work#abc-tile-ads",
-      "permanent": true
-    },
-    {
       "source": "/work/travel-agency-ads",
       "destination": "/work#travel-agency-ads",
       "permanent": true

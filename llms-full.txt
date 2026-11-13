@@ -58,7 +58,6 @@ The FlexFlow eliminates intermediary layers. The founder directly scopes the eng
 - Polynomial Protocol: L2 decentralized perpetuals platform. Redesigned conversion hierarchy and gasless trading messaging. Shipped live in 14 days, resulting in 4x deposit growth in 60 days and sub-90s user onboarding.
 - Post Bridge: Social scheduling SaaS. Redesigned onboarding and feature demonstration, increasing free trial sign-ups 3x with a +38% rise in trial-to-paid retention.
 - SuperX: X creator tool. Shipped visual redesign, doubling trial conversion rates with over 250,000 launch impressions.
-- ABC Tile & Sanitaryware: B2B architectural campaign generating 268 verified dealer and contractor leads at ₹55.59 per lead on Meta Ads.
 - Voyage India Travel: Direct-to-WhatsApp holiday booking campaign generating 160+ qualified holiday package inquiries at ₹14.54 per lead.
 - Zara Salon & Spa: Local beauty and bridal campaign reaching 1.08M impressions at ₹2.35 CPM with 28+ direct high-ticket bookings at ₹45.00 per inquiry.
 

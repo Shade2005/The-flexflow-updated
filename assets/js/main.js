@@ -1846,16 +1846,27 @@ window.initPageSpells = function () {
 };
 
 /* ==========================================================================
-   DESIGN SPELL: KINETIC TELEMETRY PAGE TRANSITION ENGINE
+   DESIGN SPELL: KINETIC TELEMETRY PAGE TRANSITION ENGINE (ARCHITECTURAL FIX)
+   ==========================================================================
+   This engine provides seamless client-side page transitions with a laser
+   telemetry beam progress indicator, link prefetching, history state
+   synchronization, and full design spell rehydration across navigation events.
    ========================================================================== */
 (function () {
+  // Guard against non-browser environments
   if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
+  // Respect user motion preferences for transitions
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+  // In-memory cache for prefetched and visited HTML documents
   var pageCache = new Map();
-  var isNavigating = false;
+  
+  // Navigation tracking counters and timers
+  var navCounter = 0;
+  var pendingTimer = null;
 
-  // 1. Ensure Telemetry Beam and Kinetic Shutter exist in DOM
+  // Ensure Telemetry Laser Beam element exists in the DOM for visual feedback
   var beam = document.getElementById('spellTransitBeam');
   if (!beam) {
     beam = document.createElement('div');
@@ -1863,15 +1874,16 @@ window.initPageSpells = function () {
     document.body.appendChild(beam);
   }
 
-  // Clean up any legacy curtain element
+  // Clean up any legacy curtain element from previous versions
   var oldCurtain = document.getElementById('spellTransitCurtain');
   if (oldCurtain && oldCurtain.parentNode) {
     oldCurtain.parentNode.removeChild(oldCurtain);
   }
 
-  var navCounter = 0;
-  var pendingTimer = null;
-
+  /**
+   * Helper: Normalize URL string into a standardized pathname + search key.
+   * Ensures consistent cache lookups regardless of origin or trailing slashes.
+   */
   function normalizeUrl(url) {
     try {
       var u = new URL(url, window.location.origin);
@@ -1883,17 +1895,58 @@ window.initPageSpells = function () {
     }
   }
 
-  // Pre-seed current page HTML into cache and warm up primary routes immediately
-  pageCache.set(normalizeUrl(window.location.href), document.documentElement.outerHTML);
-  ['/', '/services', '/work', '/contact'].forEach(function (path) {
-    try {
-      var full = window.location.origin + path;
-      if (normalizeUrl(full) !== normalizeUrl(window.location.href)) {
-        prefetch(full);
-      }
-    } catch (e) {}
-  });
+  /**
+   * Helper: Normalize pathnames for semantic route comparison.
+   * Strips '.html' extensions, trailing slashes, and resolves '/index' to '/'.
+   * This ensures '/work', '/work.html', and '/work/' are identified as the same route.
+   */
+  function normalizePath(pathname) {
+    if (!pathname) return '/';
+    var p = pathname.toLowerCase();
+    if (p.endsWith('/index.html') || p.endsWith('/index')) {
+      p = '/';
+    } else if (p.endsWith('.html')) {
+      p = p.slice(0, -5);
+    }
+    if (p.length > 1 && p.endsWith('/')) {
+      p = p.slice(0, -1);
+    }
+    return p || '/';
+  }
 
+  // Internal state: Tracks the route pathname currently rendered in the DOM.
+  // Updated exclusively when swapPageDOM() successfully replaces the page contents.
+  var currentRenderedPath = normalizePath(window.location.pathname);
+
+  /**
+   * Helper: Remove stale initialization dataset flags from incoming HTML trees.
+   * Prevents cached or swapped DOM nodes from falsely appearing initialized,
+   * guaranteeing that window.initPageSpells() re-binds listeners cleanly.
+   */
+  function cleanInitDatasets(container) {
+    if (!container) return;
+    var flagged = container.querySelectorAll(
+      '[data-showcase-init], [data-faq-init], [data-stack-init], [data-subnav-init], ' +
+      '[data-models-init], [data-planner-init], [data-discipline-init], [data-filter-init], [data-telemetry-init]'
+    );
+    for (var i = 0; i < flagged.length; i++) {
+      var el = flagged[i];
+      delete el.dataset.showcaseInit;
+      delete el.dataset.faqInit;
+      delete el.dataset.stackInit;
+      delete el.dataset.subnavInit;
+      delete el.dataset.modelsInit;
+      delete el.dataset.plannerInit;
+      delete el.dataset.disciplineInit;
+      delete el.dataset.filterInit;
+      delete el.dataset.telemetryInit;
+    }
+  }
+
+  /**
+   * Helper: Check whether an anchor element points to an internal HTML route.
+   * Filters out download links, target="_blank", hash-only jumps, and external origins.
+   */
   function isInternalLink(a) {
     if (!a || !a.href) return false;
     if (a.target && a.target !== '_self' && a.target !== '') return false;
@@ -1909,7 +1962,9 @@ window.initPageSpells = function () {
     }
   }
 
-  // Pre-Cognitive Link Warmup: Prefetch on hover or touchstart
+  /**
+   * Pre-Cognitive Link Warmup: Fetches pristine page HTML over network and caches it.
+   */
   function prefetch(url) {
     var key = normalizeUrl(url);
     if (pageCache.has(key)) return Promise.resolve(pageCache.get(key));
@@ -1928,6 +1983,19 @@ window.initPageSpells = function () {
       });
   }
 
+  /**
+   * Preload primary routes into memory for instantaneous response
+   */
+  ['/', '/services', '/work', '/contact'].forEach(function (path) {
+    try {
+      var full = window.location.origin + path;
+      prefetch(full);
+    } catch (e) {}
+  });
+
+  /**
+   * Attach hover/touch prefetch listeners to all internal links
+   */
   function attachPrefetchListeners() {
     var links = document.querySelectorAll('a[href]');
     links.forEach(function (link) {
@@ -1946,26 +2014,19 @@ window.initPageSpells = function () {
     });
   }
 
+  /**
+   * Synchronize active visual state across desktop and mobile navigation menus
+   */
   function updateNavActiveStates(targetPath) {
-    var normalized = targetPath.toLowerCase();
-    if (normalized.endsWith('.html')) normalized = normalized.replace('.html', '');
-    if (normalized === '/index') normalized = '/';
+    var normalized = normalizePath(targetPath);
 
     var navLinks = document.querySelectorAll('#siteNav .navigation-links a, #navMenu .navigation-menu-links a');
     navLinks.forEach(function (link) {
       var linkPath = link.getAttribute('href');
       if (!linkPath) return;
-      var cleanLink = linkPath.toLowerCase();
-      if (cleanLink.endsWith('.html')) cleanLink = cleanLink.replace('.html', '');
-      if (cleanLink === '/index') cleanLink = '/';
+      var cleanLink = normalizePath(linkPath);
 
-      var isActive = false;
-      if (normalized === '/' && (cleanLink === '/' || cleanLink === '/index')) {
-        isActive = true;
-      } else if (normalized !== '/' && cleanLink === normalized) {
-        isActive = true;
-      }
-
+      var isActive = (cleanLink === normalized);
       if (isActive) {
         link.setAttribute('aria-current', 'page');
         link.classList.add('active');
@@ -1976,6 +2037,13 @@ window.initPageSpells = function () {
     });
   }
 
+  /**
+   * Core Navigation Controller: Dispatches between in-page anchor jumps and SPA transitions.
+   * Handles both explicit user link clicks and browser back/forward history events (popstate).
+   *
+   * @param {string} url - Target URL string
+   * @param {boolean} isPopState - True if triggered by browser history traversal
+   */
   function navigateTo(url, isPopState) {
     var targetUrl;
     try {
@@ -1985,10 +2053,11 @@ window.initPageSpells = function () {
       return;
     }
 
-    var currentUrl = new URL(window.location.href);
+    var targetPath = normalizePath(targetUrl.pathname);
+    var isSamePage = (targetPath === currentRenderedPath);
 
-    // 1. Same-page hash anchor smooth scroll
-    if (targetUrl.pathname === currentUrl.pathname && targetUrl.hash) {
+    // Scenario 1: Same-page navigation with hash anchor (e.g. clicking /work#saas while on /work)
+    if (isSamePage && targetUrl.hash) {
       var anchor = document.querySelector(targetUrl.hash);
       if (anchor) {
         if (window.__lenis) {
@@ -2003,8 +2072,9 @@ window.initPageSpells = function () {
       }
     }
 
-    // 2. Same-page scroll to top
-    if (targetUrl.pathname === currentUrl.pathname && !targetUrl.hash) {
+    // Scenario 2: Same-page navigation with no hash (scroll to top smoothly)
+    // Only apply if user clicked a link to the current page, NOT if popstate traversal moved to a different page!
+    if (isSamePage && !targetUrl.hash) {
       if (window.__lenis) {
         window.__lenis.scrollTo(0, { duration: 0.6 });
       } else {
@@ -2013,8 +2083,8 @@ window.initPageSpells = function () {
       return;
     }
 
-    // 3. Special handling for /about when already on homepage
-    if (targetUrl.pathname === '/about' && (currentUrl.pathname === '/' || currentUrl.pathname === '/index.html')) {
+    // Scenario 3: Special handling for /about route mapping to homepage #about anchor
+    if (targetPath === '/about' && currentRenderedPath === '/') {
       var aboutEl = document.querySelector('#about');
       if (aboutEl) {
         if (window.__lenis) {
@@ -2030,10 +2100,10 @@ window.initPageSpells = function () {
       }
     }
 
-    // 4. Special handling for /about when on other pages
     var customDisplayPath = null;
-    if (targetUrl.pathname === '/about') {
+    if (targetPath === '/about') {
       targetUrl = new URL('/index.html#about', window.location.origin);
+      targetPath = '/';
       customDisplayPath = '/about';
     }
 
@@ -2053,7 +2123,7 @@ window.initPageSpells = function () {
       currentMain.classList.add('page-is-leaving');
     }
 
-    // Fetch page HTML
+    // Fetch page HTML via cache or network
     var fetchPromise = prefetch(targetUrl.href).then(function (html) {
       if (!html) throw new Error('Empty response');
       return html;
@@ -2074,7 +2144,8 @@ window.initPageSpells = function () {
 
       beam.style.width = '100%';
 
-      swapPageDOM(html, targetUrl, isPopState, customDisplayPath);
+      // Perform DOM swap and state update
+      swapPageDOM(html, targetUrl, isPopState, customDisplayPath, targetPath);
 
       var newMain = document.getElementById('main') || document.querySelector('.site-main');
       if (newMain) {
@@ -2096,7 +2167,11 @@ window.initPageSpells = function () {
     });
   }
 
-  function swapPageDOM(html, targetUrl, isPopState, customDisplayPath) {
+  /**
+   * DOM Swapper: Injects the new document's <main> element, updates title/meta,
+   * synchronizes browser history state, resets scroll, and rehydrates interactive scripts.
+   */
+  function swapPageDOM(html, targetUrl, isPopState, customDisplayPath, targetPath) {
     var parser = new DOMParser();
     var doc = parser.parseFromString(html, 'text/html');
 
@@ -2117,6 +2192,8 @@ window.initPageSpells = function () {
     var newMain = doc.getElementById('main') || doc.querySelector('.site-main');
     if (currentMain && newMain) {
       newMain.style.backgroundColor = '#0C0B12';
+      // Strip initialization flags from incoming elements to allow fresh rehydration
+      cleanInitDatasets(newMain);
       currentMain.parentNode.replaceChild(newMain, currentMain);
     }
 
@@ -2131,13 +2208,16 @@ window.initPageSpells = function () {
     var displayPath = customDisplayPath || targetUrl.pathname;
     updateNavActiveStates(displayPath);
 
-    // 6. Push history state if not popstate
+    // 6. Update internal tracking state of currently rendered route
+    currentRenderedPath = targetPath;
+
+    // 7. Push history state ONLY if this is a new link navigation (NOT a popstate traversal)
     if (!isPopState && history.pushState) {
       var historyUrl = customDisplayPath ? (window.location.origin + customDisplayPath) : targetUrl.href;
-      history.pushState({ url: historyUrl }, '', historyUrl);
+      history.pushState({ url: historyUrl, path: targetPath }, '', historyUrl);
     }
 
-    // 7. Scroll position reset or scroll to target hash
+    // 8. Scroll position reset or scroll to target hash
     if (targetUrl.hash) {
       var anchor = document.querySelector(targetUrl.hash);
       if (anchor) {
@@ -2158,25 +2238,26 @@ window.initPageSpells = function () {
       }
     }
 
-    // 8. Rehydrate all interactive Design Spells on the new page
+    // 9. Rehydrate all interactive Design Spells on the new page
     if (typeof window.initPageSpells === 'function') {
       window.initPageSpells();
     }
 
-    // Reattach prefetch listeners to all links
+    // Reattach prefetch listeners to all new internal links
     attachPrefetchListeners();
 
     // Dispatch global event for any external consumers
     window.dispatchEvent(new CustomEvent('flexflow:pagetransition', {
-      detail: { url: targetUrl.href }
+      detail: { url: targetUrl.href, path: targetPath }
     }));
   }
 
-  // Intercept internal link clicks
+  // Intercept internal link clicks for smooth SPA transitions
   document.addEventListener('click', function (e) {
     var link = e.target.closest('a');
     if (!link) return;
 
+    // Allow native behavior for modifier keys or non-primary clicks
     if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
 
     if (!isInternalLink(link)) return;
@@ -2186,6 +2267,7 @@ window.initPageSpells = function () {
 
     e.preventDefault();
 
+    // Close mobile drawer if active before transitioning
     if (typeof window.closeMobileNav === 'function') {
       window.closeMobileNav();
     }
@@ -2193,12 +2275,13 @@ window.initPageSpells = function () {
     navigateTo(link.href, false);
   });
 
-  // Handle browser Back / Forward buttons
+  // Handle browser Back / Forward buttons (popstate events)
   window.addEventListener('popstate', function () {
+    // Pass isPopState = true so navigateTo restores the historical DOM without pushing new entries
     navigateTo(window.location.href, true);
   });
 
-  // Handle direct loads of /about
+  // Handle direct initial loads of /about route
   if (window.location.pathname === '/about') {
     updateNavActiveStates('/about');
     setTimeout(function () {
@@ -2210,22 +2293,16 @@ window.initPageSpells = function () {
     }, 150);
   }
 
-  // Initial prefetch binding
+  // Initial prefetch binding once DOM is ready
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', attachPrefetchListeners);
   } else {
     attachPrefetchListeners();
   }
 
-  // Expose API on window
+  // Expose transition API on window
   window.__spellTransition = {
     navigateTo: navigateTo,
     prefetch: prefetch
   };
 })();
-
-
-
-
-
-
