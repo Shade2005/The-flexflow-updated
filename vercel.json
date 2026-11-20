@@ -2,23 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/about",
-      "destination": "/#about",
-      "permanent": true
-    },
-    {
-      "source": "/work/travel-agency-ads",
-      "destination": "/work#travel-agency-ads",
-      "permanent": true
-    },
-    {
-      "source": "/work/salon-ads",
-      "destination": "/work#salon-ads",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

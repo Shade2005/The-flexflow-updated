@@ -20,8 +20,9 @@
   <meta property="og:description" content="Founder-led marketing for businesses that would rather talk to the person doing the work. Web design, AI visibility, SEO, performance marketing, brand identity and social.">
   <meta property="og:url" content="https://theflexflow.in/">
   <meta property="og:image" content="https://theflexflow.in/assets/images/logo-mark-signal.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <!-- Match actual 512x512 dimensions of logo-mark-signal.png for accurate social/AI parser ingestion -->
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The FlexFlow - Founder-led marketing engineering.">
   <meta name="twitter:description" content="Web design, AI visibility, SEO, performance marketing, brand systems, and social media. One point of contact.">
@@ -76,8 +77,8 @@
         },
         "areaServed": [
           {
-            "@type": "Country",
-            "name": "Global"
+            "@type": "Place",
+            "name": "Worldwide"
           },
           {
             "@type": "Country",
@@ -103,13 +104,11 @@
             "name": "Hamza Khan",
             "jobTitle": "Founder & Marketing Engineer",
             "email": "hamza@theflexflow.in",
-            "url": "https://theflexflow.in/#about",
+            "url": "https://theflexflow.in/about",
             "image": "https://theflexflow.in/assets/images/logo-mark-signal.png",
             "sameAs": [
               "https://www.linkedin.com/in/hamza-khan-the-flexflow/",
-              "https://www.instagram.com/__khanfident/",
-              "https://x.com/theflexflow",
-              "https://github.com/theflexflow"
+              "https://www.instagram.com/__khanfident/"
             ],
             "knowsAbout": [
               "Generative Engine Optimization (GEO)",
@@ -136,9 +135,7 @@
         ],
         "sameAs": [
           "https://www.linkedin.com/in/hamza-khan-the-flexflow/",
-          "https://www.instagram.com/__khanfident/",
-          "https://x.com/theflexflow",
-          "https://github.com/theflexflow"
+          "https://www.instagram.com/__khanfident/"
         ],
         "knowsAbout": [
           "AI Visibility Engineering (GEO/AEO)",
@@ -154,8 +151,7 @@
             "telephone": "+918929243913",
             "contactType": "sales",
             "email": "hamza@theflexflow.in",
-            "availableLanguage": ["English", "Hindi"],
-            "contactOption": "TollFree"
+            "availableLanguage": ["English", "Hindi"]
           }
         ],
         "hasOfferCatalog": {
@@ -236,6 +232,10 @@
           "@id": "https://theflexflow.in/#organization"
         },
         "inLanguage": "en-US",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".hero-copy .lead", ".faq-body p"]
+        },
         "potentialAction": {
           "@type": "CommunicateAction",
           "name": "Book a 30-min Consultation",
@@ -258,7 +258,8 @@
         <span>The FlexFlow</span>
       </a>
       <nav class="navigation-links" aria-label="Primary">
-        <a href="/#about">About</a>
+        <!-- Link directly to dedicated /about entity page for crawler discovery -->
+        <a href="/about">About</a>
         <a href="/services">Services</a>
         <a href="/work">Case Studies</a>
         <a href="/blog">Blog</a>
@@ -1226,7 +1227,8 @@
               <h3 class="showcase-step-heading">160+ booking enquiries on a budget smaller than rent</h3>
               <p class="case-line">Voyage India Travel was competing with national booking sites on a budget smaller than their monthly office rent. &#8377;2,542.35 spent, 160+ package enquiries across Hyderabad, Delhi&ndash;Agra and Kashmir - &#8377;14.54 a lead.</p>
               <div class="case-cta">
-                <a class="button button-tertiary-ink button-small" href="/work#travel-agency-ads" data-spell="magnetic">Read the case study</a>
+                <!-- Link directly to dedicated indexable case study URL -->
+                <a class="button button-tertiary-ink button-small" href="/work/travel-agency-ads" data-spell="magnetic">Read the case study</a>
               </div>
             </article>
 
@@ -1239,7 +1241,8 @@
               <h3 class="showcase-step-heading">1.08M city impressions at &#8377;2.35 CPM</h3>
               <p class="case-line">Zara Salon &amp; Spa was invisible to everyone who didn't already walk past it. 1.08M+ impressions across their own city at &#8377;2.35 CPM, and 28+ booking enquiries at &#8377;45.00 each.</p>
               <div class="case-cta">
-                <a class="button button-tertiary-ink button-small" href="/work#salon-ads" data-spell="magnetic">Read the case study</a>
+                <!-- Link directly to dedicated indexable case study URL -->
+                <a class="button button-tertiary-ink button-small" href="/work/salon-ads" data-spell="magnetic">Read the case study</a>
               </div>
             </article>
 
@@ -1466,7 +1469,7 @@
           <div class="footer-column">
             <span>Navigation</span>
             <a href="/">Home</a>
-            <a href="/#about">About</a>
+            <a href="/about">About</a>
             <a href="/services">Services</a>
             <a href="/work">Case Studies</a>
             <a href="/blog">Blog</a>

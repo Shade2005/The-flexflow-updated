@@ -1,7 +1,21 @@
 User-agent: *
 Allow: /
+# Prevent crawlers from indexing the internal placeholder blog template
+Disallow: /blog/template
+Disallow: /blog/template.html
+
+# Search Engines (Critical for ChatGPT Search & Copilot retrieval via Bing)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 # AI Crawlers & LLM Assistants (GEO / AEO)
+# OAI-SearchBot is OpenAI's dedicated crawler for ChatGPT Search citations
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -11,7 +25,11 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+# PerplexityBot indexes pages; Perplexity-User fetches live context on demand
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 User-agent: Google-Extended

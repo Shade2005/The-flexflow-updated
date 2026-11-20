@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sub-Second LCP: Engineering Portfolio Sites for Speed &amp; AI Crawlability · The FlexFlow</title>
+  <meta name="description"
+    content="Why bloated client-side JavaScript SPAs hurt both Core Web Vitals (LCP, INP) and AI search visibility. How static semantic HTML delivers instant crawlability for OAI-SearchBot and PerplexityBot.">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/Favicon - 512x512 px.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/images/Favicon - 512x512 px.svg">
+  <meta name="theme-color" content="#14141A">
+  <style>html,body{background-color:#0C0B12!important;color-scheme:dark;}</style>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Sub-Second LCP: Engineering Portfolio Sites for Speed &amp; AI Crawlability · The FlexFlow">
+  <meta property="og:description"
+    content="How static HTML architecture eliminates the JavaScript hydration gap for AI crawlers while hitting sub-second LCP and sub-100ms INP.">
+  <meta property="og:url" content="https://theflexflow.in/blog/sub-second-lcp-portfolio-architecture">
+  <link rel="canonical" href="https://theflexflow.in/blog/sub-second-lcp-portfolio-architecture">
+  <meta property="og:site_name" content="The FlexFlow">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://theflexflow.in/assets/images/logo-mark-signal.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="article:published_time" content="2026-11-20T10:00:00+05:30">
+  <meta property="article:author" content="https://mohammedanaf.in/about">
+  <meta property="article:section" content="Web Architecture">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sub-Second LCP: Engineering Sites for Speed &amp; AI Crawlability">
+  <meta name="twitter:description"
+    content="Static DOM vs client-side hydration: why raw HTML wins both Core Web Vitals and AI search retrieval.">
+  <meta name="twitter:image" content="https://theflexflow.in/assets/images/logo-mark-signal.png">
+
+  <!-- Fonts & Stylesheets -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="/assets/css/tokens.css?v=5">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=28">
+
+  <!-- Schema.org BlogPosting + BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://theflexflow.in/blog/sub-second-lcp-portfolio-architecture#article",
+        "isPartOf": {
+          "@id": "https://theflexflow.in/blog#collection"
+        },
+        "headline": "Sub-Second LCP: Engineering Portfolio Sites for Maximum Speed & AI Crawlability",
+        "description": "Why static semantic HTML outperforms heavy client-side JavaScript bundles for Core Web Vitals (LCP, INP, CLS) and AI search crawler ingestion.",
+        "url": "https://theflexflow.in/blog/sub-second-lcp-portfolio-architecture",
+        "mainEntityOfPage": "https://theflexflow.in/blog/sub-second-lcp-portfolio-architecture",
+        "datePublished": "2026-11-20T10:00:00+05:30",
+        "dateModified": "2026-11-20T10:00:00+05:30",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mohammedanaf.in/#person",
+          "name": "Mohammed Anaf",
+          "jobTitle": "Co-Founder & CTO",
+          "url": "https://mohammedanaf.in/about"
+        },
+        "publisher": {
+          "@id": "https://theflexflow.in/#organization"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://theflexflow.in/assets/images/logo-mark-signal.png",
+          "width": "512",
+          "height": "512"
+        },
+        "articleSection": "Web Architecture",
+        "inLanguage": "en-US",
+        "speakable": {
+          "@type": "SpeakableSpecification",
+          "cssSelector": [".answer-block"]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://theflexflow.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://theflexflow.in/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Sub-Second LCP & AI Crawlability",
+            "item": "https://theflexflow.in/blog/sub-second-lcp-portfolio-architecture"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="ink">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="navigation" id="siteNav">
+    <div class="navigation-inner">
+      <a class="lockup" href="/" aria-label="The FlexFlow - home">
+        <img class="on-ink" src="/assets/images/logo-mark-signal.png" alt="The FlexFlow logo" width="32" height="32">
+        <span>The FlexFlow</span>
+      </a>
+      <nav class="navigation-links" aria-label="Primary">
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/work">Case Studies</a>
+        <a href="/blog" aria-current="page">Blog</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <a class="button button-primary button-small navigation-cta-desktop" href="/contact?service=web" data-spell="magnetic">Book a 30-min call</a>
+      <button class="navigation-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="navigation-menu" id="navMenu" aria-hidden="true">
+      <nav class="navigation-menu-links" aria-label="Primary, mobile">
+        <a href="/about"><span class="navigation-menu-number">01</span><span class="navigation-menu-label">About</span></a>
+        <a href="/services"><span class="navigation-menu-number">02</span><span class="navigation-menu-label">Services</span></a>
+        <a href="/work"><span class="navigation-menu-number">03</span><span class="navigation-menu-label">Case Studies</span></a>
+        <a href="/blog" aria-current="page"><span class="navigation-menu-number">04</span><span class="navigation-menu-label">Blog</span></a>
+        <a href="/contact"><span class="navigation-menu-number">05</span><span class="navigation-menu-label">Contact</span></a>
+      </nav>
+      <div class="navigation-menu-footer">
+        <a class="button button-primary button-large" href="/contact?service=web" data-spell="magnetic">Book a 30-min call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <section class="field ink section article-section">
+      <div class="wrapper">
+
+        <div class="article-header-wrap">
+          <nav class="article-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <span class="article-breadcrumb-sep"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span>
+            <a href="/blog">Blog</a>
+            <span class="article-breadcrumb-sep"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></span>
+            <span aria-current="page">Sub-Second LCP &amp; AI Crawlability</span>
+          </nav>
+
+          <div class="blog-badge">Web Architecture</div>
+          <h1 class="article-title">Sub-Second LCP: Engineering Portfolio Sites for Maximum Speed &amp; AI Crawlability</h1>
+          <p class="article-lead answer-block">
+            Engineering a marketing or portfolio website for sub-second Largest Contentful Paint (LCP) and sub-100ms Interaction to Next Paint (INP) simultaneously solves one of the biggest technical blockers in AI search: the JavaScript hydration gap. Static HTML5 paired with tokenized CSS and progressive enhancement delivers complete text, pricing, and Schema.org JSON-LD in the first HTTP response — guaranteeing zero render-blocking delays for human buyers and 100% first-pass readability for <code>OAI-SearchBot</code> and <code>PerplexityBot</code>.
+          </p>
+
+          <div class="article-byline">
+            <div class="article-author-lockup">
+              <img class="article-author-avatar" src="/assets/images/logo-mark-signal.png" alt="Mohammed Anaf - Co-Founder & CTO of The FlexFlow">
+              <div>
+                <span class="article-author-name">Mohammed Anaf</span>
+                <span class="article-author-role">Co-Founder &amp; CTO &middot; Nov 20, 2026 &middot; 7 min read</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-layout-grid">
+          <aside class="article-sidebar" aria-label="Table of Contents">
+            <a href="/blog" class="article-sidebar-back">
+              <i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to all articles
+            </a>
+            <div class="article-toc-box">
+              <div class="article-toc-heading">
+                <i class="fa-solid fa-list-ul text-signal" aria-hidden="true"></i> Contents
+              </div>
+              <ul class="article-toc-list">
+                <li><a href="#hydration-gap">The Hydration Gap for AI Bots</a></li>
+                <li><a href="#cwv-targets">Core Web Vitals Engineering Targets</a></li>
+                <li><a href="#static-dom-checklist">Static DOM Architecture Checklist</a></li>
+              </ul>
+            </div>
+          </aside>
+
+          <article class="article-body">
+            <h2 id="hydration-gap">Why does client-side rendering hurt AI search visibility?</h2>
+            <p class="answer-block">
+              Real-time RAG crawlers operate under strict latency budgets because a user is actively waiting for an answer in ChatGPT or Perplexity. Unlike Googlebot's multi-stage Chromium rendering queue, AI search bots fetch the initial HTML document and parse it immediately. If a site ships an empty <code>&lt;div id="root"&gt;</code> and loads its copy, tables, or JSON-LD via client-side API calls, the crawler either times out or indexes an empty document — eliminating the page from the candidate citation pool before ranking even begins.
+            </p>
+
+            <h2 id="cwv-targets">What Core Web Vitals thresholds matter most in 2026?</h2>
+            <p class="answer-block">
+              Google's Core Web Vitals evaluate three concrete user-experience metrics: Largest Contentful Paint (LCP) under 2.5 seconds (we engineer for under 1.0 second), Interaction to Next Paint (INP) — which replaced FID — under 200ms (we target under 100ms), and Cumulative Layout Shift (CLS) below 0.1. Hitting these thresholds requires pre-sized image dimensions, immutable CDN caching for static assets, minimal third-party scripts, and zero layout-thrashing animations on initial paint.
+            </p>
+
+            <h2 id="static-dom-checklist">Static DOM Engineering Checklist</h2>
+            <ul style="margin: 0 0 28px 20px; line-height: 1.85;">
+              <li><strong>Test with <code>curl</code> or JavaScript disabled:</strong> Every headline, service description, case study metric, and JSON-LD block must be present in the raw HTML response.</li>
+              <li><strong>Set explicit width/height on media:</strong> Prevent layout shift (CLS = 0) and serve modern <code>.webp</code> assets with <code>loading="lazy"</code> below the fold.</li>
+              <li><strong>Edge-cache immutable assets:</strong> Serve CSS, JS, fonts, and images with <code>Cache-Control: public, max-age=31536000, immutable</code> and versioned query strings.</li>
+              <li><strong>Keep interactivity progressive:</strong> Layer smooth scrolling and micro-interactions on top of semantic HTML so core content never depends on script execution.</li>
+            </ul>
+
+            <div class="button-row" style="margin-top: 36px;">
+              <a class="button button-primary button-large" href="/web-design" data-spell="magnetic">Explore Web Design &amp; Architecture</a>
+              <a class="button button-tertiary-ink button-large" href="/contact?service=web" data-spell="magnetic">Scope a 4-week rebuild</a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ REVEAL FOOTER ============ -->
+  <div class="footer-reveal-wrap" id="footerRevealWrap">
+    <footer class="footer">
+      <div class="footer-ambient-glow" aria-hidden="true"></div>
+      <div class="footer-watermark-wrap" aria-hidden="true">
+        <span class="footer-watermark">THE FLEXFLOW</span>
+      </div>
+      <div class="footer-glass-card">
+        <div class="footer-top">
+          <div class="footer-company">
+            <a class="lockup" href="/">
+              <img class="on-ink" src="/assets/images/logo-mark-signal.png" alt="The FlexFlow logo" width="32" height="32">
+              <span>The FlexFlow</span>
+            </a>
+            <p class="footer-blurb">Founder-led marketing for businesses that would rather talk to the person doing the work.</p>
+          </div>
+          <div class="footer-column">
+            <span>Navigation</span>
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/services">Services</a>
+            <a href="/work">Case Studies</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+          </div>
+          <div class="footer-column">
+            <span>Services</span>
+            <a href="/web-design">Web design</a>
+            <a href="/ai-visibility">AI visibility</a>
+            <a href="/seo">SEO</a>
+            <a href="/performance-marketing">Performance marketing</a>
+            <a href="/brand-identity">Brand identity</a>
+            <a href="/social-media">Social media</a>
+          </div>
+          <div class="footer-column footer-contact">
+            <span>Contact</span>
+            <a href="mailto:hamza@theflexflow.in">hamza@theflexflow.in</a>
+            <a href="tel:+918929243913">+91 89292 43913</a>
+            <span class="footer-location">E-82/b, A.F.E, Okhla, New Delhi - 110025</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bar">
+        <span>&copy; 2026 The FlexFlow &middot; All rights reserved.</span>
+        <span class="footer-legal"><a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="/assets/js/main.js?v=19"></script>
+</body>
+
+</html>

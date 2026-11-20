@@ -23,6 +23,11 @@ flowchart TD
     CONTACT_PAGE -->|Clicks Browser Back Button| POPSTATE_TRIGGER["Browser popstate event triggers"]
     POPSTATE_TRIGGER -->|DOM Swapped & Spells Rehydrated| WORK_RETURN["Returns to /work cleanly with functional interactions"]
 
+    %% Journey 4: AI Search Discovery (ChatGPT Search / Perplexity / Google AIO)
+    START_AI(["Buyer Prompts ChatGPT / Perplexity"]) --> AI_CRAWL["OAI-SearchBot / PerplexityBot / Bing IndexNow"]
+    AI_CRAWL --> AI_PAGES["Lands on /about, /work/*, or /blog/geo-* Answer Passage"]
+    AI_PAGES --> BOOK_CALL
+
     %% Conversion Endpoints
     BOOK_CALL --> CONFIRMATION(["Confirmed Client Intro Call"])
 ```

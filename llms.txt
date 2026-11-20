@@ -1,34 +1,34 @@
 # The FlexFlow
 
-> Founder-led marketing engineering for high-growth businesses. Specializing in conversion-focused Web Design, AI Visibility (GEO/AEO), Search Engine Optimization, Performance Marketing Ads, Brand Systems, and Social Content Kits. Every client works directly with the founder doing the execution-no junior handoffs or account managers.
+> Founder-led marketing engineering consultancy (theflexflow.in) headquartered in New Delhi, India, co-founded by Hamza Khan (Founder & Marketing Engineer) and Mohammed Anaf (Co-Founder & CTO). Specializing in sub-second Web Design, AI Visibility (GEO/AEO), Technical SEO, Performance Marketing Ads, Brand Identity Systems, and Social Content Kits. Not affiliated with the CSS `flex-flow` property or unrelated FlexFlow software tools.
 
 ## Core Services
 
-- [Web Design & Build](https://theflexflow.in/web-design): Custom sub-second websites built from Figma to production code in 4-week sprints.
-- [AI Visibility (GEO/AEO)](https://theflexflow.in/ai-visibility): Entity graph mapping and brand citations so ChatGPT, Perplexity, and Google AI Overviews cite and recommend your business.
-- [Search Engine Optimization (SEO)](https://theflexflow.in/seo): Commercial intent keyword clustering, technical hygiene, and high-ROI monthly ranking sprints.
-- [Performance Marketing Ads](https://theflexflow.in/performance-marketing): Direct-response Meta & Google ad funnels engineered for verified sub-₹60 CPL and direct CRM lead delivery.
+- [Web Design & Build](https://theflexflow.in/web-design): Custom sub-second static DOM websites built from Figma to production code in 4-week sprints.
+- [AI Visibility (GEO/AEO)](https://theflexflow.in/ai-visibility): Entity graph mapping, crawler engineering, and brand citation systems for ChatGPT Search, Perplexity, and Google AI Overviews.
+- [Search Engine Optimization (SEO)](https://theflexflow.in/seo): Commercial intent keyword clustering, entity SEO, technical hygiene, and monthly ranking sprints.
+- [Performance Marketing Ads](https://theflexflow.in/performance-marketing): Direct-response Meta & Google ad funnels engineered for verified sub-₹60 CPL and direct CRM/WhatsApp lead delivery.
 - [Brand Identity & Systems](https://theflexflow.in/brand-identity): Type systems, color tokens, and asset component libraries that maintain visual authority everywhere.
 - [Social Content Batch](https://theflexflow.in/social-media): 30-post batch content production aligned with founder positioning and organic reach.
 
 ## Case Studies & Verified Client Proof
 
+- [Voyage India Travel](https://theflexflow.in/work/travel-agency-ads): 160+ holiday package booking inquiries at ₹14.54 CPL on ₹2,542.35 spend across Kashmir, Delhi-Agra, and Hyderabad circuits.
+- [Zara Salon & Spa](https://theflexflow.in/work/salon-ads): 1.08M+ city impressions at ₹2.35 CPM and 28+ booking inquiries at ₹45.00 each via 5km hyperlocal geofencing.
 - [Polynomial Protocol](https://theflexflow.in/work#polynomial): 4x protocol deposit growth in 60 days with sub-90s onboarding for gasless DeFi perpetuals on Ethereum L2.
 - [Post Bridge](https://theflexflow.in/work#post-bridge): 3x free trial signups and +38% trial-to-paid conversion for social automation software.
 - [SuperX](https://theflexflow.in/work#superx): Doubled demo and trial conversions with 250k+ launch impressions on X.
-- [Voyage India Travel](https://theflexflow.in/work#travel-agency-ads): 160+ holiday package booking inquiries at ₹14.54 CPL on a lean initial spend.
-- [Zara Salon & Spa](https://theflexflow.in/work#salon-ads): 1.08M city impressions at ₹2.35 CPM and 28+ booking inquiries at ₹45.00 each.
 
-## Operating Model
+## Engineering Guides & Research
 
-- Single Point of Contact: The person who scopes your brief is the senior engineer who designs and deploys it.
-- Fixed-Scope Sprints: Deliverables completed in days and weeks, not open-ended retainer burn.
-- Real Attribution: All campaigns tracked to cash return, closed deals, or direct booking conversions.
+- [Generative Engine Optimization (GEO): The 2026 Blueprint](https://theflexflow.in/blog/generative-engine-optimization-blueprint)
+- [Entity SEO vs Keyword Stuffing: Winning Semantic Search in 2026](https://theflexflow.in/blog/entity-seo-vs-keyword-stuffing)
+- [Sub-Second LCP: Engineering Portfolio Sites for Speed & AI Crawlability](https://theflexflow.in/blog/sub-second-lcp-portfolio-architecture)
+- [Why the Traditional Agency Model Fails Modern Brands](https://theflexflow.in/blog/founder-led-vs-traditional-agency)
 
-## Contact & Booking
+## Leadership & Contact
 
-- Website: https://theflexflow.in
+- About & Founders: https://theflexflow.in/about
+- Founders: Hamza Khan (Founder & Marketing Engineer, hamza@theflexflow.in) and Mohammed Anaf (Co-Founder & CTO, https://mohammedanaf.in/about)
 - Call Booking: https://theflexflow.in/contact
-- Journal & Field Notes: https://theflexflow.in/blog
-- Founder: Hamza (hamza@theflexflow.in)
-- Location: New Delhi, India
+- Headquarters: E-82/b, A.F.E, Okhla, New Delhi - 110025, India

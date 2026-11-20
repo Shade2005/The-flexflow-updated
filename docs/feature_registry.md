@@ -56,5 +56,11 @@
 
 - **FEAT-011: Blog Engine & Markdown-Compatible Editorial**
   - *Location*: [`blog.html`](file:///f:/Projects/FlexFlow/agency-portfolio/blog.html), `blog/*.html`
-  - *Description*: Content hub with reading time calculations, table of contents, and founder-led agency thought leadership.
-  - *Status*: Active
+  - *Description*: Content hub with reading time calculations, table of contents, and 4 published passage-optimized thought leadership & GEO/SEO/Web Architecture articles (`blog/template.html` marked `noindex`).
+  - *Status*: Active (Updated 2026-11-20 with 3 new GEO/Entity/LCP articles)
+
+## 5. AI Search (GEO/AEO) & Entity Indexing Infrastructure
+- **FEAT-012: GEO/AEO Crawler, IndexNow & Standalone Entity Architecture**
+  - *Location*: [`robots.txt`](file:///f:/Projects/FlexFlow/agency-portfolio/robots.txt), [`sitemap.xml`](file:///f:/Projects/FlexFlow/agency-portfolio/sitemap.xml), [`llms.txt`](file:///f:/Projects/FlexFlow/agency-portfolio/llms.txt), [`llms-full.txt`](file:///f:/Projects/FlexFlow/agency-portfolio/llms-full.txt), [`about.html`](file:///f:/Projects/FlexFlow/agency-portfolio/about.html), [`work/travel-agency-ads.html`](file:///f:/Projects/FlexFlow/agency-portfolio/work/travel-agency-ads.html), [`work/salon-ads.html`](file:///f:/Projects/FlexFlow/agency-portfolio/work/salon-ads.html), [`scripts/submit-indexnow.js`](file:///f:/Projects/FlexFlow/agency-portfolio/scripts/submit-indexnow.js), [`docs/offsite-geo-checklist.md`](file:///f:/Projects/FlexFlow/agency-portfolio/docs/offsite-geo-checklist.md)
+  - *Description*: Explicit `OAI-SearchBot`, `Perplexity-User`, and `Bingbot` permissions; IndexNow batch submission pipeline; disambiguated `/about` entity page; standalone indexable case study URLs; repaired Schema.org `@graph` parity; and off-site entity consensus playbook.
+  - *Status*: Active (Implemented 2026-11-20)

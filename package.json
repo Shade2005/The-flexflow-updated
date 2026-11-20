@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "indexnow": "node scripts/submit-indexnow.js"
   },
   "keywords": [],
   "author": "",
